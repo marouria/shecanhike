@@ -1,7 +1,8 @@
 <script setup>
 const { find } = useStrapi();
 const config = useRuntimeConfig();
-const strapiUrl = config.public.strapi?.url || "http://localhost:1337";
+const isProduction = process.env.NODE_ENV === "production";
+const strapiUrl = process.env.STRAPI_URL;
 
 const { data: hikesData } = await useAsyncData("hikes", () =>
   find("hikes", { populate: "*" })
@@ -14,9 +15,7 @@ const hikes = computed(() => {
     id: hike.id,
     title: hike.title,
     description: hike.description,
-    coverUrl: hike.cover?.url
-      ? `${strapiUrl}${hike.cover.url}`
-      : "/images/placeholder.jpg",
+    coverUrl: isProduction ? hike.cover.url : `${strapiUrl}${hike.cover.url}`,
   }));
 });
 </script>

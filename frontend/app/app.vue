@@ -40,7 +40,7 @@ const hikes = computed(() => {
     <section class="hero">
       <div class="hero-container">
         <div class="hero-image">
-          <img src="/images/hero-hike.jpg" alt="Hiking trail in mountains" />
+          <img src="/img/hero-hike.jpg" alt="Hiking trail in mountains" />
         </div>
         <div class="hero-content">
           <h1 class="hero-title">
@@ -63,28 +63,28 @@ const hikes = computed(() => {
               </svg>
             </div>
             <img
-              src="/images/hero-grid.png"
+              src="/img/hero-grid.png"
               alt="Hiker portrait"
               class="grid-photo grid-photo-4"
             />
             <!-- <div class="photo-grid">
               <img
-                src="/images/photo-1.jpg"
+                src="/img/photo-1.jpg"
                 alt="Japanese temple"
                 class="grid-photo grid-photo-1"
               />
               <img
-                src="/images/photo-2.jpg"
+                src="/img/photo-2.jpg"
                 alt="Mountain hut"
                 class="grid-photo grid-photo-2"
               />
               <img
-                src="/images/photo-3.jpg"
+                src="/img/photo-3.jpg"
                 alt="Cherry blossoms"
                 class="grid-photo grid-photo-3"
               />
               <img
-                src="/images/photo-4.jpg"
+                src="/img/photo-4.jpg"
                 alt="Hiker portrait"
                 class="grid-photo grid-photo-4"
               />

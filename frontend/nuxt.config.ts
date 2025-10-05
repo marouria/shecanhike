@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   modules: ["@nuxtjs/strapi"],
+  css: ["~/assets/styles/main.css"],
   strapi: {
     url: process.env.STRAPI_URL,
     prefix: "/api",

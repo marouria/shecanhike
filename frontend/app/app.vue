@@ -2,6 +2,7 @@
   <div class="page-wrapper">
     <AppHeader />
     <NuxtPage />
+    <AppFooter />
     <NuxtRouteAnnouncer />
   </div>
 </template>

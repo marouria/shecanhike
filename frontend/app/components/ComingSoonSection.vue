@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/img/hero-hike.jpg");
+  background-image: url("/img/coming-soon.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

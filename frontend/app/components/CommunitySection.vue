@@ -2,7 +2,7 @@
   <section class="community-section">
     <div class="community-container">
       <div class="community-image">
-        <img src="/img/hero-hike.jpg" alt="Women hiking together" />
+        <NuxtImg src="/img/hero-main.jpg" alt="Hero" />
       </div>
       <div class="community-content">
         <button class="community-button">Join the community</button>

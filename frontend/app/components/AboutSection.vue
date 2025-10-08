@@ -8,21 +8,21 @@
         </h2>
         <div class="about-text">
           <p>
-            Shecanhike is a project born from a passion for hiking, culture,
-            and the wild beauty of our planet. It's a celebration of women's
-            curiosity and strength on the trailwhere every step connects us
-            to history, landscapes, and ourselves.
+            Shecanhike is a project born from a passion for hiking, culture, and
+            the wild beauty of our planet. It's a celebration of women's
+            curiosity and strength on the trailwhere every step connects us to
+            history, landscapes, and ourselves.
           </p>
           <p>
             Whether close to home or while traveling, shecanhike encourages
-            women to explore their surroundings through hiking. We believe
-            that the best way to understand a placeits culture, stories,
-            people and spiritis by walking through it.
+            women to explore their surroundings through hiking. We believe that
+            the best way to understand a placeits culture, stories, people and
+            spiritis by walking through it.
           </p>
         </div>
       </div>
       <div class="about-image">
-        <img src="/img/hero-grid.png" alt="Temple shrine" />
+        <NuxtImg src="/img/hero-main.jpg" alt="Hero" />
       </div>
     </div>
   </section>

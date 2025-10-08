@@ -34,7 +34,7 @@ const hikes = computed(() => {
       <div class="hikes-grid">
         <div v-for="hike in hikes" :key="hike.id" class="hike-card">
           <div class="hike-image">
-            <img :src="hike.coverUrl" :alt="hike.title" />
+            <NuxtImg :src="hike.coverUrl" :alt="hike.title" />
           </div>
           <div class="hike-info">
             <h3 class="hike-title">{{ hike.title }}</h3>

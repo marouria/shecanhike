@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-image">
-        <img src="/img/hero-hike.jpg" alt="Hiking trail in mountains" />
+        <NuxtImg src="/img/hero-main.jpg" alt="Hiking trail in mountains" />
       </div>
       <div class="hero-content">
         <h1 class="hero-title">
@@ -24,8 +24,8 @@
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </div>
-          <img
-            src="/img/hero-grid.png"
+          <NuxtImg
+            src="/img/hero-grid.jpg"
             alt="Hiker portrait"
             class="grid-photo grid-photo-4"
           />

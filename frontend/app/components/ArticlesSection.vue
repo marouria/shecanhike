@@ -9,12 +9,14 @@
       <div class="articles-grid">
         <article class="article-card">
           <div class="article-image">
-            <img src="/img/hero-grid.png" alt="Article cover" />
+            <NuxtImg src="/img/hero-main.jpg" alt="Hero" />
           </div>
           <div class="article-content">
             <time class="article-date">July 12, 2025</time>
             <h3 class="article-title">My very first post</h3>
-            <p class="article-excerpt">c'est un super article de blog incroyable.</p>
+            <p class="article-excerpt">
+              c'est un super article de blog incroyable.
+            </p>
             <a href="#" class="article-link">learn more</a>
           </div>
         </article>

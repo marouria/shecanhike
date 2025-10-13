@@ -1,3 +1,25 @@
+<script setup>
+const { find } = useStrapi();
+const config = useRuntimeConfig();
+const isProduction = process.env.NODE_ENV === "production";
+const strapiUrl = process.env.STRAPI_URL;
+
+const { data: articlesData } = await useAsyncData("articles", () =>
+  find("articles", { populate: "*" })
+);
+
+const articles = computed(() => {
+  if (!articlesData.value?.data) return [];
+  return articlesData.value.data;
+});
+
+const coverArticleUrl = (article) => {
+  return isProduction
+    ? article.cover?.url
+    : `${strapiUrl}${article.cover?.url}`;
+};
+</script>
+
 <template>
   <section class="articles-section">
     <div class="articles-container">
@@ -7,15 +29,19 @@
       </div>
 
       <div class="articles-grid">
-        <article class="article-card">
+        <article
+          v-for="article in articles"
+          :key="article.id"
+          class="article-card"
+        >
           <div class="article-image">
-            <NuxtImg src="/img/hero-main.jpg" alt="Hero" />
+            <NuxtImg :src="coverArticleUrl(article)" :alt="article.title" />
           </div>
           <div class="article-content">
-            <time class="article-date">July 12, 2025</time>
-            <h3 class="article-title">My very first post</h3>
-            <p class="article-excerpt">
-              c'est un super article de blog incroyable.
+            <time class="article-date">{{ article.date }}</time>
+            <h3 class="article-title">{{ article.title }}</h3>
+            <p class="article-description">
+              {{ article.description }}
             </p>
             <a href="#" class="article-link">learn more</a>
           </div>
@@ -108,9 +134,14 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-.article-excerpt {
+.article-description {
   font-size: 1rem;
   line-height: 1.6;
   color: #1a1a1a;

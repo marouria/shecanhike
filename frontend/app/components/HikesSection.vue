@@ -15,7 +15,7 @@ const hikes = computed(() => {
     id: hike.id,
     title: hike.title,
     description: hike.description,
-    coverUrl: isProduction ? hike.cover.url : `${strapiUrl}${hike.cover.url}`,
+    coverUrl: isProduction ? hike.cover.url : `${strapiUrl}${hike.cover?.url}`,
   }));
 });
 </script>

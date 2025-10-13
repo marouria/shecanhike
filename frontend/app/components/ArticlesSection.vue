@@ -28,7 +28,7 @@
 <style scoped>
 .articles-section {
   padding: 6rem 0;
-  background-color: #e8e6e1;
+  background-color: var(color-background);
 }
 
 .articles-container {
@@ -52,7 +52,7 @@
 }
 
 .articles-button {
-  background-color: #a65440;
+  background-color: var(--color-primary);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -63,7 +63,7 @@
 }
 
 .articles-button:hover {
-  background-color: #8f4735;
+  background-color: var(color-primary-dar);
 }
 
 .articles-grid {
@@ -83,7 +83,7 @@
   aspect-ratio: 16/9;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #d3d1cc;
+  background-color: var(--color-primary);
 }
 
 .article-image img {
@@ -125,7 +125,7 @@
 }
 
 .article-link:hover {
-  color: #a65440;
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {

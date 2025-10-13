@@ -17,7 +17,7 @@
 .header {
   position: sticky;
   top: 0;
-  background-color: #e8e6e1;
+  background-color: var(--color-background);
   z-index: 100;
   padding: 1.5rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -56,7 +56,7 @@
 }
 
 .cta-button {
-  background-color: #a65440;
+  background-color: var(--color-primary);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -67,7 +67,7 @@
 }
 
 .cta-button:hover {
-  background-color: #8f4735;
+  background-color: var(color-primary-dar);
 }
 
 @media (max-width: 768px) {

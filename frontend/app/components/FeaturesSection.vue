@@ -31,7 +31,7 @@
 <style scoped>
 .features-section {
   padding: 6rem 0;
-  background-color: #e8e6e1;
+  background-color: var(color-background);
 }
 
 .features-container {

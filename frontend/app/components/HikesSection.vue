@@ -67,8 +67,8 @@ const hikes = computed(() => {
 
 .discover-button {
   background-color: transparent;
-  color: #a65440;
-  border: 2px solid #a65440;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-size: 1rem;
@@ -77,7 +77,7 @@ const hikes = computed(() => {
 }
 
 .discover-button:hover {
-  background-color: #a65440;
+  background-color: var(--color-primary);
   color: white;
 }
 

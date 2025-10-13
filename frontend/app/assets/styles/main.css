@@ -5,6 +5,17 @@
   font-style: normal;
 }
 
+:root {
+  /* Brand Colors */
+  --color-primary: #a65440;
+  --color-primary-dark: #8f4735;
+
+  /* Neutral Colors */
+  --color-text: #1a1a1a;
+  --color-background: #e8e6e1;
+  --color-background-light: #d3d1cc;
+}
+
 body {
   /* RESET */
   margin: 0;

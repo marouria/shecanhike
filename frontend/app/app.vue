@@ -9,7 +9,7 @@
 
 <style scoped>
 .page-wrapper {
-  background-color: #e8e6e1;
+  background-color: var(--color-background);
   min-height: 100vh;
 }
 </style>

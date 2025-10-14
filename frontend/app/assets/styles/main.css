@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
 @font-face {
   font-family: "TitleFont";
   src: url("/fonts/UoqMunThenKhung-Regular.ttf") format("truetype");
@@ -20,6 +23,7 @@ body {
   /* RESET */
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background-color: var(--color-background);
 }
 
 h1,

@@ -8,7 +8,14 @@
         <a href="#blog" class="nav-link">Blog</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <button class="cta-button">Join the community</button>
+      <UButton
+        size="xl"
+        label="Join the community"
+        color="brand"
+        trailing-icon="i-lucide-arrow-right"
+        class="cta-button"
+        @click=""
+      />
     </div>
   </header>
 </template>
@@ -56,18 +63,12 @@
 }
 
 .cta-button {
-  background-color: var(--color-primary);
   color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
 .cta-button:hover {
-  background-color: var(color-primary-dar);
+  background-color: var(--color-primary-dark);
 }
 
 @media (max-width: 768px) {

@@ -6,6 +6,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/strapi", "@nuxt/image", "@nuxt/ui"],
   css: ["~/assets/styles/main.css"],
+  ui: {
+    theme: {
+      colors: [
+        "primary",
+        "secondary",
+        "brand",
+        "info",
+        "success",
+        "warning",
+        "error",
+      ],
+    },
+  },
   strapi: {
     url: process.env.STRAPI_URL,
     prefix: "/api",

@@ -11,7 +11,7 @@
       <UButton
         size="xl"
         label="Join the community"
-        color="brand"
+        color="primary"
         trailing-icon="i-lucide-arrow-right"
         class="cta-button"
         @click=""

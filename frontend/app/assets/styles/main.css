@@ -2,8 +2,6 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --color-brand: #a65440; /* Hack to solve the issue of overriding default tailwind primary color */
-
   --color-brand-50: #f9f2f1;
   --color-brand-100: #f3e4e0;
   --color-brand-200: #e3bfb7;

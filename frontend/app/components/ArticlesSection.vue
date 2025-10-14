@@ -29,23 +29,14 @@ const coverArticleUrl = (article) => {
       </div>
 
       <div class="articles-grid">
-        <article
-          v-for="article in articles"
-          :key="article.id"
-          class="article-card"
-        >
-          <div class="article-image">
-            <NuxtImg :src="coverArticleUrl(article)" :alt="article.title" />
-          </div>
-          <div class="article-content">
-            <time class="article-date">{{ article.date }}</time>
-            <h3 class="article-title">{{ article.title }}</h3>
-            <p class="article-description">
-              {{ article.description }}
-            </p>
-            <a href="#" class="article-link">learn more</a>
-          </div>
-        </article>
+        <template v-for="article in articles" :key="article.id">
+          <CardArticle
+            :title="article.title"
+            :coverUrl="coverArticleUrl(article)"
+            :date="article.date"
+            :description="article.description"
+          />
+        </template>
       </div>
     </div>
   </section>
@@ -96,67 +87,6 @@ const coverArticleUrl = (article) => {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
-}
-
-.article-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.article-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: var(--color-primary);
-}
-
-.article-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.article-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.article-date {
-  font-size: 0.875rem;
-  color: #1a1a1a;
-}
-
-.article-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-.article-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.article-link {
-  font-size: 1rem;
-  color: #1a1a1a;
-  text-decoration: underline;
-  align-self: flex-start;
-}
-
-.article-link:hover {
-  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {

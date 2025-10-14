@@ -32,6 +32,8 @@
 
 <style scoped>
 .coming-soon-section {
+  max-width: 100%;
+  margin: 0;
   position: relative;
   min-height: 100vh;
   display: flex;

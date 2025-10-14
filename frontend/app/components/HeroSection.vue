@@ -41,8 +41,6 @@
 }
 
 .hero-container {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -51,10 +49,13 @@
 }
 
 .hero-image {
+  width: 100%;
+  height: 100%;
   position: relative;
   border-radius: 200px;
   overflow: hidden;
   aspect-ratio: 3/4;
+  max-height: 700px;
 }
 
 .hero-image img {

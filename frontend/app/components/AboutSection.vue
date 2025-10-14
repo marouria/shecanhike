@@ -92,6 +92,7 @@
   border-radius: 200px;
   overflow: hidden;
   aspect-ratio: 3/4;
+  max-height: 700px;
 }
 
 .about-image img {

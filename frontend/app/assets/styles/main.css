@@ -27,3 +27,8 @@ h2,
 h3 {
   font-family: "TitleFont";
 }
+
+section {
+  max-width: 1280px;
+  margin: 0 auto;
+}

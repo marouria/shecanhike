@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { find } = useStrapi();
 const config = useRuntimeConfig();
 const isProduction = process.env.NODE_ENV === "production";

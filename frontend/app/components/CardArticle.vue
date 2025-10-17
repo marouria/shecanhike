@@ -1,10 +1,17 @@
 <script setup lang="ts">
 defineProps<{
-  coverUrl?: string;
+  imageUrl?: string;
   title?: string;
   description?: string;
   date?: string;
 }>();
+
+const isProduction = process.env.NODE_ENV === "production";
+const strapiUrl = process.env.STRAPI_URL;
+
+const returnImageUrl = (url: string | undefined) => {
+  return isProduction ? url : `${strapiUrl}${url}`;
+};
 </script>
 
 <template>
@@ -14,7 +21,7 @@ defineProps<{
         class="w-full overflow-hidden bg-primary-200 aspect-video rounded-xl"
       >
         <NuxtImg
-          :src="coverUrl"
+          :src="returnImageUrl(imageUrl)"
           :alt="title"
           class="object-cover w-full h-full"
         />

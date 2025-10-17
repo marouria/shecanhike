@@ -1,23 +1,10 @@
 <script setup lang="ts">
-const { find } = useStrapi();
-const config = useRuntimeConfig();
-const isProduction = process.env.NODE_ENV === "production";
-const strapiUrl = process.env.STRAPI_URL;
+const articleStore = useArticleStore();
+await articleStore.fetchArticles();
 
-const { data: articlesData } = await useAsyncData("articles", () =>
-  find("articles", { populate: "*" })
-);
-
-const articles = computed(() => {
-  if (!articlesData.value?.data) return [];
-  return articlesData.value.data;
-});
-
-const coverArticleUrl = (article) => {
-  return isProduction
-    ? article.cover?.url
-    : `${strapiUrl}${article.cover?.url}`;
-};
+const articles = articleStore.articles;
+const error = articleStore.error;
+const loading = articleStore.loading;
 </script>
 
 <template>
@@ -29,10 +16,16 @@ const coverArticleUrl = (article) => {
       </div>
 
       <div class="articles-grid">
-        <template v-for="article in articles" :key="article.id">
+        <template v-if="loading">
+          <p>Loading articles...</p>
+        </template>
+        <template v-else-if="error">
+          <p>Error loading articles: {{ error.message }}</p>
+        </template>
+        <template v-else v-for="article in articles" :key="article.id">
           <CardArticle
             :title="article.title"
-            :coverUrl="coverArticleUrl(article)"
+            :imageUrl="article.cover?.url"
             :date="article.date"
             :description="article.description"
           />

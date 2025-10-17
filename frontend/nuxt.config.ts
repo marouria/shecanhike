@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   strapi: {
     url: process.env.STRAPI_URL,
     prefix: "/api",
-    version: "v4",
+    version: "v5",
   },
   vite: {
     plugins: [tailwindcss()],

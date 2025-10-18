@@ -8,19 +8,19 @@ const loading = articleStore.loading;
 </script>
 
 <template>
-  <section class="articles-section">
-    <div class="articles-container">
-      <div class="articles-header">
-        <h2 class="articles-title">Read our latest articles</h2>
-        <button class="articles-button">Read our articles</button>
+  <section class="py-24 bg-background">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-16">
+        <h2 class="text-5xl md:text-[3rem] font-bold text-gray-900 m-0">Read our latest articles</h2>
+        <button class="bg-primary text-white border-none py-3 px-6 rounded cursor-pointer transition-colors duration-200 hover:bg-primary-dark">Read our articles</button>
       </div>
 
-      <div class="articles-grid">
+      <div class="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
         <template v-if="loading">
           <p>Loading articles...</p>
         </template>
         <template v-else-if="error">
-          <p>Error loading articles: {{ error.message }}</p>
+          <p>Error loading articles: {{ error?.message }}</p>
         </template>
         <template v-else v-for="article in articles" :key="article.id">
           <CardArticle
@@ -34,67 +34,3 @@ const loading = articleStore.loading;
     </div>
   </section>
 </template>
-
-<style scoped>
-.articles-section {
-  padding: 6rem 0;
-  background-color: var(color-background);
-}
-
-.articles-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.articles-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.articles-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.articles-button {
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.articles-button:hover {
-  background-color: var(color-primary-dar);
-}
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .articles-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-
-  .articles-title {
-    font-size: 2rem;
-  }
-
-  .articles-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>

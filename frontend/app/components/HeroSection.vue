@@ -1,21 +1,21 @@
 <template>
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-image">
-        <NuxtImg src="/img/hero-main.jpg" alt="Hiking trail in mountains" />
+  <section class="py-16">
+    <div class="px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 items-center">
+      <div class="w-full h-full relative rounded-[200px] overflow-hidden aspect-[3/4] max-h-[700px]">
+        <NuxtImg src="/img/hero-main.jpg" alt="Hiking trail in mountains" class="w-full h-full object-cover" />
       </div>
-      <div class="hero-content">
-        <h1 class="hero-title">
+      <div class="flex flex-col gap-12">
+        <h1 class="text-5xl md:text-[3rem] font-bold leading-tight text-gray-900 m-0">
           Explore safely the outdoors where nature meets culture with other
           women
         </h1>
-        <div class="hero-features">
-          <div class="badge">
-            <span class="badge-text"
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="w-[140px] h-[140px] border-2 border-gray-900 rounded-full flex flex-col items-center justify-center gap-2 flex-shrink-0">
+            <span class="text-xs text-center leading-snug px-4"
               >destinations explorations experiences</span
             >
             <svg
-              class="badge-arrow"
+              class="w-6 h-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -27,107 +27,10 @@
           <NuxtImg
             src="/img/hero-grid.jpg"
             alt="Hiker portrait"
-            class="grid-photo grid-photo-4"
+            class="w-full aspect-square object-cover rounded-xl"
           />
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.hero {
-  padding: 4rem 0;
-}
-
-.hero-container {
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-radius: 200px;
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  max-height: 700px;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.hero-features {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.badge {
-  width: 140px;
-  height: 140px;
-  border: 2px solid #1a1a1a;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.badge-text {
-  font-size: 0.7rem;
-  text-align: center;
-  line-height: 1.3;
-  padding: 0 1rem;
-}
-
-.badge-arrow {
-  width: 24px;
-  height: 24px;
-}
-
-.grid-photo {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-features {
-    flex-direction: column;
-  }
-}
-</style>

@@ -1,19 +1,37 @@
 <template>
-  <header class="header">
-    <div class="header-container">
-      <div class="logo">SheCanHike</div>
-      <nav class="nav">
-        <a href="#hikes" class="nav-link">Hikes</a>
-        <a href="#about" class="nav-link">About us</a>
-        <a href="#blog" class="nav-link">Blog</a>
-        <a href="#contact" class="nav-link">Contact</a>
+  <header class="sticky top-0 z-[100] py-6 border-b border-black/5">
+    <div
+      class="max-w-7xl mx-auto px-8 flex flex-wrap items-center justify-between"
+    >
+      <div class="text-2xl font-bold text-gray-900">SheCanHike</div>
+      <nav class="flex gap-10 md:gap-10 items-center">
+        <a
+          href="#hikes"
+          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
+          >Hikes</a
+        >
+        <a
+          href="#about"
+          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
+          >About us</a
+        >
+        <a
+          href="#blog"
+          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
+          >Blog</a
+        >
+        <a
+          href="#contact"
+          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
+          >Contact</a
+        >
       </nav>
       <UButton
         size="xl"
         label="Join the community"
         color="primary"
         trailing-icon="i-lucide-arrow-right"
-        class="cta-button"
+        class="text-white cursor-pointer hover:bg-primary-dark"
         @click=""
       />
     </div>
@@ -21,63 +39,7 @@
 </template>
 
 <style scoped>
-.header {
-  position: sticky;
-  top: 0;
+header {
   background-color: var(--color-background);
-  z-index: 100;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.header-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-.nav {
-  display: flex;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.nav-link {
-  color: #1a1a1a;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: opacity 0.2s;
-}
-
-.nav-link:hover {
-  opacity: 0.7;
-}
-
-.cta-button {
-  color: white;
-  cursor: pointer;
-}
-
-.cta-button:hover {
-  background-color: var(--color-primary-dark);
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    flex-wrap: wrap;
-  }
-
-  .nav {
-    gap: 1.5rem;
-  }
 }
 </style>

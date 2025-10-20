@@ -1,17 +1,31 @@
 <template>
   <section class="py-16">
-    <div class="px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 items-center">
-      <div class="w-full h-full relative rounded-[200px] overflow-hidden aspect-[3/4] max-h-[700px]">
-        <NuxtImg src="/img/hero-main.jpg" alt="Hiking trail in mountains" class="w-full h-full object-cover" />
+    <div
+      class="px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-16 items-center"
+    >
+      <div
+        class="w-full h-full relative rounded-frame overflow-hidden aspect-[3/4] max-h-[700px] hidden lg:block"
+      >
+        <NuxtImg
+          src="/img/hero-main.jpg"
+          alt="Hiking trail in mountains"
+          class="w-full h-full object-cover"
+        />
       </div>
       <div class="flex flex-col gap-12">
-        <h1 class="text-5xl md:text-[3rem] font-bold leading-tight text-gray-900 m-0">
+        <h1
+          class="text-5xl md:text-[3rem] font-bold leading-tight text-gray-900 m-0"
+        >
           Explore safely the outdoors where nature meets culture with other
           women
         </h1>
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="w-[140px] h-[140px] border-2 border-gray-900 rounded-full flex flex-col items-center justify-center gap-2 flex-shrink-0">
-            <span class="text-xs text-center leading-snug px-4"
+        <div
+          class="flex flex-col md:flex-row gap-8 items-start justify-between"
+        >
+          <div
+            class="h-[140px] border-2 border-gray-900 rounded-full flex flex-col items-center justify-center gap-2 flex-shrink-0"
+          >
+            <span class="w-[140px] text-xs text-center leading-snug px-4"
               >destinations explorations experiences</span
             >
             <svg
@@ -27,7 +41,7 @@
           <NuxtImg
             src="/img/hero-grid.jpg"
             alt="Hiker portrait"
-            class="w-full aspect-square object-cover rounded-xl"
+            class="w-full aspect-square object-cover rounded-xl max-w-full md:max-w-[300px]"
           />
         </div>
       </div>

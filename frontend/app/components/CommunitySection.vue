@@ -1,12 +1,24 @@
 <template>
   <section class="py-24 bg-background">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 items-center">
-      <div class="rounded-[200px] overflow-hidden aspect-[3/4] max-h-[700px]">
-        <NuxtImg src="/img/hero-main.jpg" alt="Hero" class="w-full h-full object-cover" />
+    <div
+      class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 items-center"
+    >
+      <div class="rounded-frame overflow-hidden aspect-[3/4] max-h-[700px]">
+        <NuxtImg
+          src="/img/hero-main.jpg"
+          alt="Hero"
+          class="w-full h-full object-cover"
+        />
       </div>
       <div class="flex flex-col gap-8">
-        <button class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base cursor-pointer transition-all duration-200 self-start hover:bg-primary hover:text-white">Join the community</button>
-        <h2 class="text-4xl md:text-[2.5rem] font-bold leading-tight text-gray-900 m-0">
+        <button
+          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base cursor-pointer transition-all duration-200 self-start hover:bg-primary hover:text-white"
+        >
+          Join the community
+        </button>
+        <h2
+          class="text-4xl md:text-[2.5rem] font-bold leading-tight text-gray-900 m-0"
+        >
           Why you should join shecanhike community for hiking
         </h2>
         <div class="flex flex-col gap-6">

@@ -15,6 +15,8 @@ const hikes = computed(() => {
     id: hike.id,
     title: hike.title,
     description: hike.description,
+    location: hike.location,
+    country: hike.country,
     coverUrl: isProduction ? hike.cover.url : `${strapiUrl}${hike.cover?.url}`,
   }));
 });
@@ -36,9 +38,16 @@ const hikes = computed(() => {
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg :src="hike.coverUrl" :alt="hike.title" class="w-full h-full object-cover" />
           </div>
-          <div class="flex flex-col gap-2">
-            <h3 class="text-2xl font-bold text-gray-900 m-0">{{ hike.title }}</h3>
-            <p class="text-sm leading-normal text-gray-900 m-0">{{ hike.description }}</p>
+          <div class="flex flex-col gap-2 items-center">
+            <p class="text-sm leading-normal text-gray-900 m-0">
+              {{ hike.location }}, {{ hike.country }}
+            </p>
+            <h3 class="text-2xl font-bold text-gray-900 m-0">
+              {{ hike.title }}
+            </h3>
+            <p class="text-sm leading-normal text-gray-900 m-0">
+              {{ hike.description }}
+            </p>
           </div>
         </div>
       </div>

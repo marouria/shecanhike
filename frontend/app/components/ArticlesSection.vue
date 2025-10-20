@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useArticleStore } from "~/stores/article";
+
 const articleStore = useArticleStore();
 await articleStore.fetchArticles();
 

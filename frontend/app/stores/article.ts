@@ -1,3 +1,5 @@
+import { useStrapi } from "#imports";
+import { defineStore } from "pinia";
 import type { Article } from "~/types/article";
 
 export const useArticleStore = defineStore("Article", () => {
@@ -10,7 +12,10 @@ export const useArticleStore = defineStore("Article", () => {
     loading.value = true;
     error.value = null;
     try {
-      const { data } = await find<Article>("articles");
+      const { data } = await find<Article>("articles", {
+        fields: ["title", "date", "description"],
+        populate: ["cover"],
+      });
       articles.value = data || [];
     } catch (e) {
       error.value = e as Error;

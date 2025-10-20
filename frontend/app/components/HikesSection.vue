@@ -1,25 +1,19 @@
 <script setup lang="ts">
-const { find } = useStrapi();
-const config = useRuntimeConfig();
+import { useHikeStore } from "~/stores/hike";
+
+const articleStore = useHikeStore();
+await articleStore.fetchHikes();
+
+const hikes = articleStore.hikes;
+const error = articleStore.error;
+const loading = articleStore.loading;
+
 const isProduction = process.env.NODE_ENV === "production";
 const strapiUrl = process.env.STRAPI_URL;
 
-const { data: hikesData } = await useAsyncData("hikes", () =>
-  find("hikes", { populate: "*" })
-);
-
-const hikes = computed(() => {
-  if (!hikesData.value?.data) return [];
-
-  return hikesData.value.data.map((hike) => ({
-    id: hike.id,
-    title: hike.title,
-    description: hike.description,
-    location: hike.location,
-    country: hike.country,
-    coverUrl: isProduction ? hike.cover.url : `${strapiUrl}${hike.cover?.url}`,
-  }));
-});
+const returnImageUrl = (url: string | undefined) => {
+  return isProduction ? url : `${strapiUrl}${url}`;
+};
 </script>
 
 <template>
@@ -45,7 +39,7 @@ const hikes = computed(() => {
         >
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg
-              :src="hike.coverUrl"
+              :src="returnImageUrl(hike.cover?.url)"
               :alt="hike.title"
               class="w-full h-full object-cover"
             />

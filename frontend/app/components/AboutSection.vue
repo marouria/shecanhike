@@ -1,114 +1,41 @@
 <template>
-  <section class="about-section">
-    <div class="about-container">
-      <div class="about-content">
-        <button class="about-button">About shecanhike</button>
-        <h2 class="about-title">
+  <section class="py-24 bg-background">
+    <div
+      class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+    >
+      <div class="flex flex-col gap-8">
+        <button
+          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base cursor-pointer transition-all duration-200 self-start hover:bg-primary hover:text-white"
+        >
+          About shecanhike
+        </button>
+        <h2
+          class="text-4xl md:text-[2.5rem] font-bold leading-tight text-gray-900 m-0"
+        >
           Let's go out and explore the world with hiking
         </h2>
-        <div class="about-text">
-          <p>
+        <div class="flex flex-col gap-6">
+          <p class="text-base leading-relaxed text-gray-900 m-0">
             Shecanhike is a project born from a passion for hiking, culture, and
             the wild beauty of our planet. It's a celebration of women's
-            curiosity and strength on the trailwhere every step connects us to
+            curiosity and strength on the trailwhere every step connects us to
             history, landscapes, and ourselves.
           </p>
-          <p>
+          <p class="text-base leading-relaxed text-gray-900 m-0">
             Whether close to home or while traveling, shecanhike encourages
             women to explore their surroundings through hiking. We believe that
-            the best way to understand a placeits culture, stories, people and
-            spiritis by walking through it.
+            the best way to understand a placeits culture, stories, people and
+            spiritis by walking through it.
           </p>
         </div>
       </div>
-      <div class="about-image">
-        <NuxtImg src="/img/hero-main.jpg" alt="Hero" />
+      <div class="rounded-frame overflow-hidden aspect-[3/4] max-h-[700px]">
+        <NuxtImg
+          src="/img/hero-main.jpg"
+          alt="Hero"
+          class="w-full h-full object-cover"
+        />
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.about-section {
-  padding: 6rem 0;
-  background-color: var(color-background);
-}
-
-.about-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.about-button {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  align-self: flex-start;
-}
-
-.about-button:hover {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-.about-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.about-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.about-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.about-image {
-  border-radius: 200px;
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  max-height: 700px;
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .about-title {
-    font-size: 1.75rem;
-  }
-}
-</style>

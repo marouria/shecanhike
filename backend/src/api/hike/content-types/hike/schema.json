@@ -26,6 +26,12 @@
         "videos",
         "audios"
       ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
     }
   }
 }

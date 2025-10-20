@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { find } = useStrapi();
 const config = useRuntimeConfig();
 const isProduction = process.env.NODE_ENV === "production";
@@ -15,141 +15,56 @@ const hikes = computed(() => {
     id: hike.id,
     title: hike.title,
     description: hike.description,
+    location: hike.location,
+    country: hike.country,
     coverUrl: isProduction ? hike.cover.url : `${strapiUrl}${hike.cover?.url}`,
   }));
 });
 </script>
 
 <template>
-  <section id="hikes" class="hikes-section">
-    <div class="hikes-container">
-      <div class="hikes-header">
-        <button class="discover-button">Discover all hikes</button>
-        <p class="hikes-description">
+  <section id="hikes" class="pt-16 pb-24">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col items-center gap-6 mb-12">
+        <button
+          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base cursor-pointer transition-all duration-200 hover:bg-primary hover:text-white"
+        >
+          Discover all hikes
+        </button>
+        <p
+          class="text-center max-w-[700px] text-base leading-relaxed text-gray-900 m-0"
+        >
           Find out the latest itineraries of shecanhike community around the
           world that blend nature and culture together
         </p>
       </div>
 
-      <div class="hikes-grid">
-        <div v-for="hike in hikes" :key="hike.id" class="hike-card">
-          <div class="hike-image">
-            <NuxtImg :src="hike.coverUrl" :alt="hike.title" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          v-for="hike in hikes"
+          :key="hike.id"
+          class="flex flex-col gap-4 cursor-pointer transition-transform duration-200 hover:-translate-y-1"
+        >
+          <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
+            <NuxtImg
+              :src="hike.coverUrl"
+              :alt="hike.title"
+              class="w-full h-full object-cover"
+            />
           </div>
-          <div class="hike-info">
-            <h3 class="hike-title">{{ hike.title }}</h3>
-            <p class="hike-description">{{ hike.description }}</p>
+          <div class="flex flex-col gap-2 items-center">
+            <p class="text-sm leading-normal text-gray-900 m-0">
+              {{ hike.location }}, {{ hike.country }}
+            </p>
+            <h3 class="text-2xl font-bold text-gray-900 m-0">
+              {{ hike.title }}
+            </h3>
+            <p class="text-sm leading-normal text-gray-900 m-0">
+              {{ hike.description }}
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.hikes-section {
-  padding: 4rem 0 6rem;
-}
-
-.hikes-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.hikes-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.discover-button {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.discover-button:hover {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-.hikes-description {
-  text-align: center;
-  max-width: 700px;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.hikes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.hike-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.hike-card:hover {
-  transform: translateY(-4px);
-}
-
-.hike-image {
-  width: 100%;
-  aspect-ratio: 3/4;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.hike-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hike-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.hike-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.hike-description {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .hikes-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .hikes-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>

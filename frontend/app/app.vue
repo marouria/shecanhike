@@ -1,15 +1,8 @@
 <template>
-  <div class="page-wrapper">
+  <UApp>
     <AppHeader />
     <NuxtPage />
     <AppFooter />
-    <NuxtRouteAnnouncer />
-  </div>
+  </UApp>
+  <NuxtRouteAnnouncer />
 </template>
-
-<style scoped>
-.page-wrapper {
-  background-color: var(--color-background);
-  min-height: 100vh;
-}
-</style>

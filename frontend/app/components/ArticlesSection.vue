@@ -11,13 +11,24 @@ const loading = articleStore.loading;
 
 <template>
   <section class="py-24 bg-background">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-16">
-        <h2 class="text-5xl md:text-[3rem] font-bold text-gray-900 m-0">Read our latest articles</h2>
-        <button class="bg-primary text-white border-none py-3 px-6 rounded cursor-pointer transition-colors duration-200 hover:bg-primary-dark">Read our articles</button>
+    <div class="max-w-7xl mx-auto">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-16"
+      >
+        <h2 class="text-5xl md:text-[3rem] font-bold m-0">
+          Read our latest articles
+        </h2>
+        <NuxtLink
+          class="bg-primary text-white border-none py-3 px-6 rounded cursor-pointer transition-colors duration-200 hover:bg-primary-dark"
+          to="/articles"
+        >
+          Read our articles</NuxtLink
+        >
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
+      <div
+        class="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8"
+      >
         <template v-if="loading">
           <p>Loading articles...</p>
         </template>

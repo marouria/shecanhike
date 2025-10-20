@@ -28,16 +28,17 @@ const returnImageUrl = (url: string | undefined) => {
       </div>
     </template>
 
-    <time class="text-sm">{{ date }}</time>
-    <h3 class="line-clamp-2 text-2xl font-bold">
-      {{ title }}
-    </h3>
-    <p class="line-clamp-3 leading-[1.6]">
-      {{ description }}
-    </p>
-
     <template #footer>
-      <a href="#" class="underline hover:text-primary">learn more</a>
+      <div class="flex flex-col gap-5">
+        <time class="text-sm">{{ date }}</time>
+        <h3 class="line-clamp-2 text-2xl font-bold">
+          {{ title }}
+        </h3>
+        <p class="line-clamp-3 leading-[1.6]">
+          {{ description }}
+        </p>
+        <a href="#" class="underline hover:text-primary">learn more</a>
+      </div>
     </template>
   </UCard>
 </template>

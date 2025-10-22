@@ -5,8 +5,6 @@ const articleStore = useHikeStore();
 await articleStore.fetchHikes();
 
 const hikes = articleStore.hikes;
-const error = articleStore.error;
-const loading = articleStore.loading;
 
 const { getImageUrl } = useStrapiImage();
 </script>

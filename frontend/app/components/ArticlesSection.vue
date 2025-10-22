@@ -10,7 +10,7 @@ const loading = articleStore.loading;
 </script>
 
 <template>
-  <section class="py-24 bg-background">
+  <section id="blog" class="py-24 bg-background">
     <div class="max-w-7xl mx-auto">
       <div
         class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-16"

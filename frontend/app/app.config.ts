@@ -11,5 +11,16 @@ export default defineAppConfig({
         footer: "p-0 sm:px-0",
       },
     },
+    header: {
+      slots: {
+        root: "bg-background",
+      },
+    },
+    footer: {
+      slots: {
+        root: "bg-[#577067] pt-12 pb-8 text-white",
+        left: "flex flex-col gap-3",
+      },
+    },
   },
 });

@@ -5,6 +5,8 @@ const articleStore = useArticleStore();
 await articleStore.fetchArticles();
 
 const articles = articleStore.articles;
+const loading = computed(() => articleStore.loading);
+const error = computed(() => articleStore.error);
 </script>
 
 <template>
@@ -19,13 +21,15 @@ const articles = articleStore.articles;
           <p>Error loading articles: {{ error?.message }}</p>
         </template>
         <template v-else v-for="article in articles" :key="article.id">
-          <CardArticle
-            class="flex-col md:flex-col"
-            :title="article.title"
-            :imageUrl="article.cover?.url"
-            :date="article.date"
-            :description="article.description"
-          />
+          <NuxtLink :to="`/articles/${article.documentId}`">
+            <CardArticle
+              class="flex-col md:flex-col"
+              :title="article.title"
+              :imageUrl="article.cover?.url"
+              :date="article.date"
+              :description="article.description"
+            />
+          </NuxtLink>
         </template>
       </div>
     </section>

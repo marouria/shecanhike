@@ -15,6 +15,7 @@ const { getImageUrl } = useStrapiImage();
         class="w-full overflow-hidden bg-primary-200 aspect-video rounded-xl"
       >
         <NuxtImg
+          v-if="article.cover?.url"
           :src="getImageUrl(article.cover?.url)"
           :alt="article.title"
           class="object-cover w-full h-full"

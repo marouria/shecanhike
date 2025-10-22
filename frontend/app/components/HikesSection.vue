@@ -34,6 +34,7 @@ const { getImageUrl } = useStrapiImage();
         >
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg
+              v-if="hike.cover?.url"
               :src="getImageUrl(hike.cover?.url)"
               :alt="hike.title"
               class="w-full h-full object-cover"

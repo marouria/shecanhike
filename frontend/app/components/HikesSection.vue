@@ -8,12 +8,7 @@ const hikes = articleStore.hikes;
 const error = articleStore.error;
 const loading = articleStore.loading;
 
-const isProduction = process.env.NODE_ENV === "production";
-const strapiUrl = process.env.STRAPI_URL;
-
-const returnImageUrl = (url: string | undefined) => {
-  return isProduction ? url : `${strapiUrl}${url}`;
-};
+const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
@@ -39,7 +34,7 @@ const returnImageUrl = (url: string | undefined) => {
         >
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg
-              :src="returnImageUrl(hike.cover?.url)"
+              :src="getImageUrl(hike.cover?.url)"
               :alt="hike.title"
               class="w-full h-full object-cover"
             />

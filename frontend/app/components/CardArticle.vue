@@ -6,12 +6,7 @@ defineProps<{
   date?: string;
 }>();
 
-const isProduction = process.env.NODE_ENV === "production";
-const strapiUrl = process.env.STRAPI_URL;
-
-const returnImageUrl = (url: string | undefined) => {
-  return isProduction ? url : `${strapiUrl}${url}`;
-};
+const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
@@ -21,7 +16,7 @@ const returnImageUrl = (url: string | undefined) => {
         class="w-full overflow-hidden bg-primary-200 aspect-video rounded-xl"
       >
         <NuxtImg
-          :src="returnImageUrl(imageUrl)"
+          :src="getImageUrl(imageUrl)"
           :alt="title"
           class="object-cover w-full h-full"
         />

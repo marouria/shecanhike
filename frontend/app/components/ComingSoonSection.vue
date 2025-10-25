@@ -38,12 +38,14 @@
       </p>
 
       <p class="text-base text-white m-0">Want to be the first to know?</p>
-
-      <button
-        class="bg-transparent text-white border-2 border-white py-4 px-10 rounded-[50px] text-base transition-all duration-300 hover:bg-white hover:"
-      >
-        Keep me posted
-      </button>
+      <UButton
+        size="xl"
+        label="Keep me posted"
+        color="neutral"
+        variant="outline"
+        class="rounded-[50px]transition-all duration-300"
+        @click=""
+      />
     </div>
   </section>
 </template>

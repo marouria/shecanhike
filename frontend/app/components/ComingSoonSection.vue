@@ -40,7 +40,7 @@
       <p class="text-base text-white m-0">Want to be the first to know?</p>
 
       <button
-        class="bg-transparent text-white border-2 border-white py-4 px-10 rounded-[50px] text-base cursor-pointer transition-all duration-300 hover:bg-white hover:"
+        class="bg-transparent text-white border-2 border-white py-4 px-10 rounded-[50px] text-base transition-all duration-300 hover:bg-white hover:"
       >
         Keep me posted
       </button>

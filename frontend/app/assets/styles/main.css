@@ -2,17 +2,23 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --color-brand-50: #f9efed;
-  --color-brand-100: #f1d9d3;
-  --color-brand-200: #e2b1a6;
-  --color-brand-300: #d28978;
-  --color-brand-400: #9a4128; /* base color */
-  --color-brand-500: #8a3a24;
-  --color-brand-600: #793320;
-  --color-brand-700: #62291a;
-  --color-brand-800: #4c2014;
-  --color-brand-900: #32150d;
-  --color-brand-950: #1d0b07;
+  --color-brand-50: #f9efec;
+  --color-brand-100: #f1d8d1;
+  --color-brand-200: #e4b3a7;
+  --color-brand-300: #d68e7e;
+  --color-brand-400: #bb6047;
+  --color-brand-500: #9a4128; /* new base color */
+  --color-brand-600: #883924;
+  --color-brand-700: #70301e;
+  --color-brand-800: #572618;
+  --color-brand-900: #3d1a10;
+  --color-brand-950: #230e08;
+
+  /* Text Colors */
+  --color-black: #1a1a1a;
+
+  /* Background Colors */
+  --color-background: #e8e6e1;
 }
 
 @font-face {
@@ -24,8 +30,8 @@
 
 :root {
   /* Brand Colors */
-  --color-primary: #a65440;
-  --color-primary-dark: #8f4735;
+  --color-primary: #9a4128;
+  --color-primary-dark: #230e08;
 
   /* Neutral Colors */
   --color-text: #1a1a1a;
@@ -57,4 +63,8 @@ section {
   .rounded-frame {
     border-radius: 70px;
   }
+}
+
+button {
+  cursor: pointer;
 }

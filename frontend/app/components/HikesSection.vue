@@ -14,7 +14,7 @@ const { getImageUrl } = useStrapiImage();
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col items-center gap-6 mb-12">
         <button
-          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base cursor-pointer transition-all duration-200 hover:bg-primary hover:text-white"
+          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base transition-all duration-200 hover:bg-primary hover:text-white"
         >
           Discover all hikes
         </button>
@@ -28,7 +28,7 @@ const { getImageUrl } = useStrapiImage();
         <div
           v-for="hike in hikes"
           :key="hike.id"
-          class="flex flex-col gap-4 cursor-pointer transition-transform duration-200 hover:-translate-y-1"
+          class="flex flex-col gap-4 transition-transform duration-200 hover:-translate-y-1"
         >
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg

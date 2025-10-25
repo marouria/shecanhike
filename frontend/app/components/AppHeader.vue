@@ -28,7 +28,11 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UHeader>
+  <UHeader
+    :ui="{
+      root: 'bg-background/50',
+    }"
+  >
     <template #title>
       <p class="text-2xl font-bold" to="/">SheCanHike</p>
       <!-- <Logo class="h-6 w-auto" /> -->
@@ -37,14 +41,14 @@ const items = computed<NavigationMenuItem[]>(() => [
     <UNavigationMenu :items="items" />
 
     <template #right>
-      <UColorModeButton />
+      <UColorModeButton class="hover:bg-elevated/50" />
 
       <UButton
         size="xl"
         label="Join the community"
         color="primary"
         trailing-icon="i-lucide-arrow-right"
-        class="text-white cursor-pointer hover:bg-primary-dark"
+        class="text-white hover:bg-brand-400"
         @click=""
       />
     </template>

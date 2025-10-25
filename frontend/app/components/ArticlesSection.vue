@@ -10,7 +10,7 @@ const loading = articleStore.loading;
 </script>
 
 <template>
-  <section id="blog" class="py-24 bg-background">
+  <section id="blog" class="py-24">
     <div class="max-w-7xl mx-auto">
       <div
         class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-16"
@@ -19,7 +19,7 @@ const loading = articleStore.loading;
           Read our latest articles
         </h2>
         <NuxtLink
-          class="bg-primary text-white border-none py-3 px-6 rounded cursor-pointer transition-colors duration-200 hover:bg-primary-dark"
+          class="bg-primary text-white border-none py-3 px-6 rounded transition-colors duration-200 hover:bg-primary-dark"
           to="/articles"
         >
           Read our articles</NuxtLink

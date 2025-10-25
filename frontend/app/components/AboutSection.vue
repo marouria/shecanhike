@@ -1,11 +1,11 @@
 <template>
-  <section id="about" class="py-24 bg-background">
+  <section id="about" class="py-24">
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
     >
       <div class="flex flex-col gap-8">
         <button
-          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base cursor-pointer transition-all duration-200 self-start hover:bg-primary hover:text-white"
+          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base transition-all duration-200 self-start hover:bg-primary hover:text-white"
         >
           About shecanhike
         </button>

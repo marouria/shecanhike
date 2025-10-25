@@ -3,11 +3,10 @@
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 items-center"
     >
-      <div class="rounded-frame overflow-hidden aspect-[3/4] max-h-[700px]">
-        <NuxtImg
-          src="/img/hero-main.jpg"
-          alt="Hero"
-          class="w-full h-full object-cover"
+      <div>
+        <ImageFrame
+          imageUrl="/img/hero-main.jpg"
+          class="m-auto lg:m-0 mr-auto"
         />
       </div>
       <div class="flex flex-col gap-8">

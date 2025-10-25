@@ -27,11 +27,10 @@
           </p>
         </div>
       </div>
-      <div class="rounded-frame overflow-hidden aspect-[3/4] max-h-[700px]">
-        <NuxtImg
-          src="/img/hero-main.jpg"
-          alt="Hero"
-          class="w-full h-full object-cover"
+      <div>
+        <ImageFrame
+          imageUrl="/img/hero-main.jpg"
+          class="m-auto lg:m-0 lg:ml-auto"
         />
       </div>
     </div>

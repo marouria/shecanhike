@@ -6,8 +6,8 @@
   --color-brand-100: #f1d8d1;
   --color-brand-200: #e4b3a7;
   --color-brand-300: #d68e7e;
-  --color-brand-400: #bb6047;
-  --color-brand-500: #9a4128; /* new base color */
+  --color-brand-400: #bb6047; /* primary color */
+  --color-brand-500: #9a4128;
   --color-brand-600: #883924;
   --color-brand-700: #70301e;
   --color-brand-800: #572618;

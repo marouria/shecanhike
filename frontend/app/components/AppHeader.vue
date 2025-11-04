@@ -34,24 +34,25 @@ const items = computed<NavigationMenuItem[]>(() => [
     }"
   >
     <template #title>
-      <p class="text-2xl font-bold" to="/">SheCanHike</p>
-      <!-- <Logo class="h-6 w-auto" /> -->
+      <p class="text-black text-2xl font-bold" to="/">SheCanHike</p>
     </template>
+
+    <!-- Large Screen Version -->
 
     <UNavigationMenu :items="items" />
 
     <template #right>
-      <UColorModeButton class="hover:bg-elevated/50" />
-
       <UButton
         size="xl"
         label="Join the community"
         color="primary"
         trailing-icon="i-lucide-arrow-right"
-        class="text-white hover:bg-brand-400"
+        class="hidden lg:flex text-white hover:bg-brand-300"
         @click=""
       />
     </template>
+
+    <!-- Mobile Version -->
 
     <template #body>
       <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />

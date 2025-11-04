@@ -13,23 +13,13 @@ export default defineAppConfig({
     },
     header: {
       slots: {
-        root: "border-bg/50",
+        root: "border-none",
       },
     },
     footer: {
       slots: {
         root: "bg-[#577067] pt-12 pb-8 text-white",
         left: "flex flex-col gap-3",
-      },
-    },
-    navigationMenu: {
-      variants: {
-        active: {
-          false: {
-            link: "text-black",
-            childLink: "hover:text-primary",
-          },
-        },
       },
     },
   },

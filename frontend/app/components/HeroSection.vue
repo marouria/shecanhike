@@ -1,21 +1,11 @@
 <template>
   <section class="py-16">
-    <div
-      class="px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-16 items-center"
-    >
-      <div
-        class="w-full h-full relative rounded-frame overflow-hidden aspect-[3/4] max-h-[700px] hidden lg:block"
-      >
-        <NuxtImg
-          src="/img/hero-main.jpg"
-          alt="Hiking trail in mountains"
-          class="w-full h-full object-cover"
-        />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-16 items-center">
+      <div class="hidden lg:block">
+        <ImageFrame imageUrl="/img/hero-main.jpg" />
       </div>
       <div class="flex flex-col gap-12">
-        <h1
-          class="text-5xl md:text-[3rem] font-bold leading-tight text-gray-900 m-0"
-        >
+        <h1 class="text-5xl md:text-[3rem] font-bold leading-tight m-0">
           Explore safely the outdoors where nature meets culture with other
           women
         </h1>

@@ -1,45 +1,61 @@
+<script setup lang="ts">
+import type { NavigationMenuItem } from "@nuxt/ui";
+
+const route = useRoute();
+
+const items = computed<NavigationMenuItem[]>(() => [
+  {
+    label: "Hikes",
+    to: "/hikes",
+    active: route.path.startsWith("/hikes"),
+  },
+  {
+    label: "About Us",
+    to: "/about",
+    active: route.path.startsWith("/about"),
+  },
+  {
+    label: "Blog",
+    to: "/articles",
+    active: route.path.startsWith("/articles"),
+  },
+  {
+    label: "Contact",
+    to: "/contact",
+    active: route.path.startsWith("/contact"),
+  },
+]);
+</script>
+
 <template>
-  <header class="sticky top-0 z-[100] py-6 border-b border-black/5">
-    <div
-      class="max-w-7xl mx-auto px-8 flex flex-wrap items-center justify-between"
-    >
-      <div class="text-2xl font-bold text-gray-900">SheCanHike</div>
-      <nav class="flex gap-10 md:gap-10 items-center">
-        <a
-          href="#hikes"
-          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
-          >Hikes</a
-        >
-        <a
-          href="#about"
-          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
-          >About us</a
-        >
-        <a
-          href="#blog"
-          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
-          >Blog</a
-        >
-        <a
-          href="#contact"
-          class="text-gray-900 no-underline text-base transition-opacity duration-200 hover:opacity-70"
-          >Contact</a
-        >
-      </nav>
+  <UHeader
+    :ui="{
+      root: 'bg-background/50',
+    }"
+  >
+    <template #title>
+      <p class="text-black text-2xl font-bold" to="/">SheCanHike</p>
+    </template>
+
+    <!-- Large Screen Version -->
+
+    <UNavigationMenu :items="items" />
+
+    <template #right>
       <UButton
         size="xl"
         label="Join the community"
         color="primary"
         trailing-icon="i-lucide-arrow-right"
-        class="text-white cursor-pointer hover:bg-primary-dark"
+        class="hidden lg:flex text-white hover:bg-brand-300"
         @click=""
       />
-    </div>
-  </header>
-</template>
+    </template>
 
-<style scoped>
-header {
-  background-color: var(--color-background);
-}
-</style>
+    <!-- Mobile Version -->
+
+    <template #body>
+      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+    </template>
+  </UHeader>
+</template>

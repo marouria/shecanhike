@@ -4,7 +4,7 @@
   >
     <div class="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
     <div
-      class="relative max-w-[800px] mx-auto py-16 px-8 text-center flex flex-col items-center gap-8 z-[1]"
+      class="relative max-w-[800px] mx-auto py-16 text-center flex flex-col items-center gap-8 z-[1]"
     >
       <div
         class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] border-2 border-white rounded-full flex flex-col items-center justify-center gap-2 flex-shrink-0"
@@ -38,12 +38,14 @@
       </p>
 
       <p class="text-base text-white m-0">Want to be the first to know?</p>
-
-      <button
-        class="bg-transparent text-white border-2 border-white py-4 px-10 rounded-[50px] text-base cursor-pointer transition-all duration-300 hover:bg-white hover:text-gray-900"
-      >
-        Keep me posted
-      </button>
+      <UButton
+        size="xl"
+        label="Keep me posted"
+        color="neutral"
+        variant="outline"
+        class="rounded-[50px]transition-all duration-300"
+        @click=""
+      />
     </div>
   </section>
 </template>

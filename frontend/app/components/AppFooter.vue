@@ -1,43 +1,74 @@
-<template>
-  <footer class="bg-[#577067] pt-12 pb-8 text-white">
-    <div class="max-w-7xl mx-auto px-8 flex flex-col gap-12">
-      <div class="flex flex-col items-center gap-8">
-        <h2 class="text-2xl font-bold text-white m-0">SheCanHike</h2>
-        <div class="flex gap-8 items-center">
-          <a href="#" class="text-white transition-opacity duration-200 hover:opacity-70" aria-label="Facebook">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-          <a href="#" class="text-white transition-opacity duration-200 hover:opacity-70" aria-label="TikTok">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-            </svg>
-          </a>
-          <a href="#" class="text-white transition-opacity duration-200 hover:opacity-70" aria-label="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="#577067" stroke-width="2"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="#577067"/>
-            </svg>
-          </a>
-          <a href="#" class="text-white transition-opacity duration-200 hover:opacity-70" aria-label="YouTube">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#577067"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+<script setup lang="ts">
+import type { NavigationMenuItem } from "@nuxt/ui";
 
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 pt-8 border-t border-white/20 text-center md:text-left">
-        <p class="text-sm text-white m-0">© 2025 Shecanhike. All rights reserved.</p>
-        <div class="flex flex-wrap justify-center gap-4 items-center">
-          <a href="#" class="text-sm text-white no-underline transition-opacity duration-200 hover:opacity-70">Privacy Policy</a>
-          <span class="text-white text-sm">|</span>
-          <a href="#" class="text-sm text-white no-underline transition-opacity duration-200 hover:opacity-70">Terms and Conditions</a>
-        </div>
+const items: NavigationMenuItem[] = [
+  {
+    label: "Figma Kit",
+    to: "https://go.nuxt.com/figma-ui",
+    target: "_blank",
+  },
+  {
+    label: "Playground",
+    to: "https://stackblitz.com/edit/nuxt-ui",
+    target: "_blank",
+  },
+  {
+    label: "Releases",
+    to: "https://github.com/nuxt/ui/releases",
+    target: "_blank",
+  },
+];
+</script>
+
+<template>
+  <UFooter>
+    <template #left>
+      <div class="flex flex-wrap justify-center gap-4 items-center">
+        <a
+          href="#"
+          class="text-sm text-white no-underline transition-opacity duration-200 hover:opacity-70"
+          >Privacy Policy</a
+        >
+        <span class="text-white text-sm">|</span>
+        <a
+          href="#"
+          class="text-sm text-white no-underline transition-opacity duration-200 hover:opacity-70"
+          >Terms and Conditions</a
+        >
       </div>
-    </div>
-  </footer>
+      <p class="text-muted text-sm">
+        Copyright © {{ new Date().getFullYear() }} Shecanhike. All rights
+        reserved.
+      </p>
+    </template>
+
+    <UNavigationMenu :items="items" variant="link" />
+
+    <template #right>
+      <UButton
+        icon="i-simple-icons-instagram"
+        color="white"
+        variant="ghost"
+        to="/"
+        target="_blank"
+        aria-label="Instagram"
+      />
+      <UButton
+        icon="i-simple-icons-tiktok"
+        color="white"
+        variant="ghost"
+        to="/"
+        target="_blank"
+        aria-label="TikTok"
+      />
+      <UButton
+        icon="i-simple-icons-youtube"
+        color="white"
+        variant="ghost"
+        to="/"
+        target="_blank"
+        aria-label="Youtube"
+      />
+    </template>
+  </UFooter>
 </template>

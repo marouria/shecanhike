@@ -1,0 +1,16 @@
+<script setup lang="ts">
+defineProps<{
+  imageUrl: string;
+}>();
+</script>
+<template>
+  <div
+    class="rounded-frame overflow-hidden aspect-[3/4] max-h-[700px] max-w-[500px]"
+  >
+    <NuxtImg
+      :src="imageUrl"
+      alt="Hiking trail in mountains"
+      class="w-full h-full object-cover"
+    />
+  </div>
+</template>

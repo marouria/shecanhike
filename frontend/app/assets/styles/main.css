@@ -2,17 +2,23 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --color-brand-50: #f9f2f1;
-  --color-brand-100: #f3e4e0;
-  --color-brand-200: #e3bfb7;
-  --color-brand-300: #d39a8d;
-  --color-brand-400: #c37564;
-  --color-brand-500: #a65440;
-  --color-brand-600: #8f4637;
-  --color-brand-700: #743a2f;
-  --color-brand-800: #592e26;
-  --color-brand-900: #3d211c;
-  --color-brand-950: #24130f;
+  --color-brand-50: #f9efec;
+  --color-brand-100: #f1d8d1;
+  --color-brand-200: #e4b3a7;
+  --color-brand-300: #d68e7e;
+  --color-brand-400: #bb6047; /* primary color */
+  --color-brand-500: #9a4128;
+  --color-brand-600: #883924;
+  --color-brand-700: #70301e;
+  --color-brand-800: #572618;
+  --color-brand-900: #3d1a10;
+  --color-brand-950: #230e08;
+
+  /* Text Colors */
+  --color-black: #1a1a1a;
+
+  /* Background Colors */
+  --color-background: #e8e6e1;
 }
 
 @font-face {
@@ -24,8 +30,8 @@
 
 :root {
   /* Brand Colors */
-  --color-primary: #a65440;
-  --color-primary-dark: #8f4735;
+  --color-primary: #9a4128;
+  --color-primary-dark: #230e08;
 
   /* Neutral Colors */
   --color-text: #1a1a1a;
@@ -38,6 +44,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 h1,
@@ -49,10 +56,15 @@ h3 {
 section {
   max-width: 1280px;
   margin: 0 auto;
+  padding-inline: calc(var(--spacing) * 8);
 }
 
 @layer utilities {
   .rounded-frame {
     border-radius: 70px;
   }
+}
+
+button {
+  cursor: pointer;
 }

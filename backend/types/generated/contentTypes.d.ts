@@ -587,12 +587,34 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    accomodation: Schema.Attribute.Boolean;
+    altitude_max: Schema.Attribute.Integer;
+    altitude_min: Schema.Attribute.Integer;
+    best_season: Schema.Attribute.Enumeration<
+      ['spring', 'summer', 'fall', 'winter']
+    >;
+    camping: Schema.Attribute.Boolean;
     country: Schema.Attribute.String;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    difficulty: Schema.Attribute.Enumeration<
+      ['easy', 'moderate', 'hard', 'expert']
+    >;
+    distance_km: Schema.Attribute.Decimal;
+    duration_days: Schema.Attribute.Integer;
+    duration_hours: Schema.Attribute.Decimal;
+    elevation_gain: Schema.Attribute.Integer;
+    elevation_loss: Schema.Attribute.Integer;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    highlight: Schema.Attribute.Enumeration<
+      ['waterfall', 'views', 'temple', 'dears']
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -600,11 +622,22 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
+    meta_description: Schema.Attribute.String;
+    meta_title: Schema.Attribute.String;
+    public_transportation: Schema.Attribute.Boolean;
+    published_date: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
+    trail_type: Schema.Attribute.Enumeration<
+      ['loop', 'out_and_back', 'point_to_point']
+    >;
+    trailhead_end: Schema.Attribute.String;
+    trailhead_start: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    video: Schema.Attribute.String;
   };
 }
 

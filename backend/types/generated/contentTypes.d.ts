@@ -576,12 +576,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiHikeHike extends Struct.CollectionTypeSchema {
-  collectionName: 'hikes';
+export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
+  collectionName: 'hiking-spots';
   info: {
-    displayName: 'Hike';
-    pluralName: 'hikes';
-    singularName: 'hike';
+    displayName: 'Hiking Spot';
+    pluralName: 'hiking-spots';
+    singularName: 'hiking-spot';
   };
   options: {
     draftAndPublish: true;
@@ -594,7 +594,10 @@ export interface ApiHikeHike extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hike.hike'> &
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hiking-spot.hiking-spot'
+    > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
@@ -1120,7 +1123,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
-      'api::hike.hike': ApiHikeHike;
+      'api::hiking-spot.hiking-spot': ApiHikingSpotHikingSpot;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

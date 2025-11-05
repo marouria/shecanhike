@@ -5,9 +5,9 @@ const route = useRoute();
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: "Hikes",
-    to: "/hikes",
-    active: route.path.startsWith("/hikes"),
+    label: "Hiking Spots",
+    to: "/hiking-spots",
+    active: route.path.startsWith("/hiking-spots"),
   },
   {
     label: "About Us",

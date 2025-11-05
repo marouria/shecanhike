@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "hikes",
+  "collectionName": "hiking-spots",
   "info": {
-    "singularName": "hike",
-    "pluralName": "hikes",
-    "displayName": "Hike"
+    "singularName": "hiking-spot",
+    "pluralName": "hiking-spots",
+    "displayName": "Hiking Spot"
   },
   "options": {
     "draftAndPublish": true

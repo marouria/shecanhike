@@ -1,4 +1,4 @@
-export interface Hike {
+export interface HikingSpot {
   id: number;
   title: string;
   description: string;

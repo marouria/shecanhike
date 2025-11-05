@@ -1,34 +1,34 @@
 import { useStrapi } from "#imports";
 import { defineStore } from "pinia";
-import type { Hike } from "~/types/hike";
+import type { HikingSpot } from "~/types/hiking-spot";
 
-export const useHikeStore = defineStore("hike", () => {
+export const useHikingSpotStore = defineStore("hiking-spot", () => {
   const { find } = useStrapi();
-  const hikes = ref<Hike[]>([]);
+  const hikingSpots = ref<HikingSpot[]>([]);
   const loading = ref(false);
   const error = ref<Error | null>(null);
 
-  const fetchHikes = async () => {
+  const fetchHikingSpots = async () => {
     loading.value = true;
     error.value = null;
     try {
-      const { data } = await find<Hike>("hikes", {
+      const { data } = await find<HikingSpot>("hiking-spots", {
         fields: ["title", "location", "country", "description"],
         populate: ["cover"],
       });
-      hikes.value = data || [];
+      hikingSpots.value = data || [];
     } catch (e) {
       error.value = e as Error;
-      console.error("Error fetching hikes:", e);
+      console.error("Error fetching hikingSpots:", e);
     } finally {
       loading.value = false;
     }
   };
 
   return {
-    hikes,
+    hikingSpots,
     loading,
     error,
-    fetchHikes,
+    fetchHikingSpots,
   };
 });

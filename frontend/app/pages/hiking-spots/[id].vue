@@ -16,8 +16,12 @@ const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
-  <section>
-    <h1>{{ hike?.title }}</h1>
-    <UBadge>{{ hike?.highlight }}</UBadge>
-  </section>
+  <UPage>
+    <UContainer as="section" class="py-24">
+      <div class="max-w-7xl mx-auto">
+        <h1>{{ hike?.title }}</h1>
+        <UBadge>{{ hike?.highlight }}</UBadge>
+      </div>
+    </UContainer>
+  </UPage>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="py-24">
+  <UContainer id="about" as="section" class="py-16">
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
     >
@@ -34,5 +34,5 @@
         />
       </div>
     </div>
-  </section>
+  </UContainer>
 </template>

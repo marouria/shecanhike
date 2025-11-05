@@ -10,7 +10,7 @@ const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
-  <section id="hiking-spots" class="pt-16 pb-24">
+  <UContainer id="hiking-spots" as="section" class="py-24">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col items-center gap-6 mb-12">
         <NuxtLink
@@ -53,5 +53,5 @@ const { getImageUrl } = useStrapiImage();
         </div>
       </div>
     </div>
-  </section>
+  </UContainer>
 </template>

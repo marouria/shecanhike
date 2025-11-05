@@ -1,5 +1,5 @@
 <template>
-  <section class="py-24">
+  <UContainer id="hiking-spots" as="section" class="py-24">
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-16"
     >
@@ -36,5 +36,5 @@
         </p>
       </div>
     </div>
-  </section>
+  </UContainer>
 </template>

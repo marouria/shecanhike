@@ -7,26 +7,37 @@ await hikingSpotStore.fetchHikingSpots();
 const hikingSpots = hikingSpotStore.hikingSpots;
 const loading = computed(() => hikingSpotStore.loading);
 const error = computed(() => hikingSpotStore.error);
+
+const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
   <UPage>
     <UContainer as="section" class="py-24">
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-5xl md:text-[3rem] font-bold m-0">Hiking spots list</h1>
-        <div class="grid grid-cols-1 md:grid-row gap-8">
-          <template v-if="loading">
-            <p>Loading all hiking spots...</p>
+      <UPageHeader title="Hiking spots" headline="Japan" />
+
+      <UPageColumns>
+        <UPageCard
+          v-for="(hike, index) in hikingSpots"
+          :key="index"
+          variant="naked"
+          :to="`/hiking-spots/${hike.documentId}`"
+          :title="hike.title"
+          :description="hike.excerpt"
+        >
+          <template #header>
+            <div class="w-full overflow-hidden bg-primary-200 rounded-xl">
+              <NuxtImg
+                v-if="hike.cover?.url"
+                :src="getImageUrl(hike.cover?.url)"
+                :alt="hike.title"
+                class="object-cover w-full h-full"
+              />
+            </div>
           </template>
-          <template v-else-if="error">
-            <p>Error loading hiking spots: {{ error?.message }}</p>
-          </template>
-          <template v-else v-for="hike in hikingSpots" :key="hike.id">
-            <p>{{ hike.documentId }}</p>
-            <p>{{ hike.title }}</p>
-          </template>
-        </div>
-      </div>
+          <template #body> </template>
+        </UPageCard>
+      </UPageColumns>
     </UContainer>
   </UPage>
 </template>

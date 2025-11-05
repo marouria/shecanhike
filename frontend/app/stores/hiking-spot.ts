@@ -14,7 +14,7 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
     error.value = null;
     try {
       const { data } = await find<HikingSpot>("hiking-spots", {
-        fields: ["title", "location", "country", "description"],
+        fields: ["title", "excerpt", "location", "country"],
         populate: ["cover"],
       });
       hikingSpots.value = data || [];

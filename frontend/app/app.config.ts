@@ -22,5 +22,17 @@ export default defineAppConfig({
         left: "flex flex-col gap-3",
       },
     },
+    pageHeader: {
+      slots: {
+        root: "border-none",
+        title: "text-black",
+      },
+    },
+    pageCard: {
+      slots: {
+        title: "text-black",
+        description: "text-[15px] text-pretty",
+      },
+    },
   },
 });

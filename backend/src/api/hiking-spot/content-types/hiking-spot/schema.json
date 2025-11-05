@@ -129,6 +129,9 @@
     },
     "trailhead_end": {
       "type": "string"
+    },
+    "excerpt": {
+      "type": "text"
     }
   }
 }

@@ -2,6 +2,7 @@
 @import "@nuxt/ui";
 
 @theme static {
+  /* Custom Brand Color Scale */
   --color-brand-50: #f9efec;
   --color-brand-100: #f1d8d1;
   --color-brand-200: #e4b3a7;
@@ -13,12 +14,6 @@
   --color-brand-800: #572618;
   --color-brand-900: #3d1a10;
   --color-brand-950: #230e08;
-
-  /* Text Colors */
-  --color-black: #1a1a1a;
-
-  /* Background Colors */
-  --color-background: #e8e6e1;
 }
 
 @font-face {
@@ -29,14 +24,15 @@
 }
 
 :root {
-  /* Brand Colors */
+  /* Custom App Colors */
   --color-primary: #9a4128;
   --color-primary-dark: #230e08;
-
-  /* Neutral Colors */
   --color-text: #1a1a1a;
   --color-background: #e8e6e1;
   --color-background-light: #d3d1cc;
+
+  /* Nuxt UI Semantic Color Overrides */
+  --ui-text-muted: theme('colors.gray.500');
 }
 
 body {

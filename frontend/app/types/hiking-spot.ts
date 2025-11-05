@@ -6,6 +6,7 @@ export interface HikingSpot {
   location: string;
   country: string;
   highlight: string;
+  excerpt: string;
   cover?: {
     url: string;
   };

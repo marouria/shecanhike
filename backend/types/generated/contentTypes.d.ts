@@ -608,6 +608,7 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     duration_hours: Schema.Attribute.Decimal;
     elevation_gain: Schema.Attribute.Integer;
     elevation_loss: Schema.Attribute.Integer;
+    excerpt: Schema.Attribute.Text;
     gallery: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

@@ -26,6 +26,8 @@
   --color-secondary-800: #2d332d;
   --color-secondary-900: #262b26;
   --color-secondary-950: #161916;
+
+  --color-text: #1a1a1a;
 }
 
 @font-face {
@@ -39,13 +41,13 @@
   /* Custom App Colors */
   --color-primary: #9a4128;
   --color-primary-dark: #230e08;
-  --color-text: #1a1a1a;
   --color-background: #e8e6e1;
   --color-background-light: #d3d1cc;
 
   /* Nuxt UI Semantic Color Overrides */
   --ui-text-muted: theme("colors.gray.500");
   --ui-text-highlighted: var(--color-text);
+  --ui-bg: var(--color-background);
 }
 
 body {

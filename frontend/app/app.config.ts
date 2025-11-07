@@ -3,6 +3,7 @@ export default defineAppConfig({
     colors: {
       primary: "brand",
       secondary: "secondary",
+      neutral: "text",
     },
     card: {
       slots: {
@@ -26,12 +27,10 @@ export default defineAppConfig({
     pageHeader: {
       slots: {
         root: "border-none",
-        title: "text-black",
       },
     },
     pageCard: {
       slots: {
-        title: "text-black",
         description: "text-[15px] text-pretty",
       },
     },

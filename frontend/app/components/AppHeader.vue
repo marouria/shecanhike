@@ -32,14 +32,20 @@ const items = computed<NavigationMenuItem[]>(() => [
     :ui="{
       root: 'bg-background/50',
     }"
+    :toggle="{
+      color: 'neutral',
+      variant: 'subtle',
+    }"
   >
     <template #title>
-      <p class="text-black text-2xl font-bold" to="/">SheCanHike</p>
+      <p class="text-2xl font-bold" to="/">SheCanHike</p>
     </template>
 
     <!-- Large Screen Version -->
 
-    <UNavigationMenu :items="items" />
+    <template #default>
+      <UNavigationMenu :items="items" color="neutral" variant="link" />
+    </template>
 
     <template #right>
       <UButton
@@ -55,7 +61,12 @@ const items = computed<NavigationMenuItem[]>(() => [
     <!-- Mobile Version -->
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        variant="link"
+        class="-mx-2.5"
+      />
     </template>
   </UHeader>
 </template>

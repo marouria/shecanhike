@@ -13,6 +13,8 @@ const loading = computed(() => hikingSpotStore.loading);
 const error = computed(() => hikingSpotStore.error);
 
 const { getImageUrl } = useStrapiImage();
+const startingUrl = hike.value?.trailhead_start;
+const endingUrl = hike.value?.trailhead_end;
 </script>
 
 <template>
@@ -40,7 +42,8 @@ const { getImageUrl } = useStrapiImage();
         <UPageHero
           :title="hike.title"
           :headline="`${hike.location}, ${hike.country}`"
-          :ui="{ container: 'sm:gap-y-4' }"
+          :ui="{ container: 'sm:gap-y-4 sm:py-10 lg:py-20' }"
+          class="m-0"
         >
           <template #body>
             <div class="flex justify-center gap-2">
@@ -50,8 +53,8 @@ const { getImageUrl } = useStrapiImage();
               >
                 <UBadge
                   size="lg"
-                  color="primary"
-                  icon="i-lucide-hash"
+                  color="secondary"
+                  :icon="`i-lucide-${inspiration.icon}`"
                   variant="soft"
                   class="mb-5 w-fit"
                 >
@@ -71,24 +74,7 @@ const { getImageUrl } = useStrapiImage();
             </div>
           </template>
         </UPageHero>
-
-        <UPageSection>
-          <UPageGrid class="lg:grid-cols-2">
-            <UCard v-if="hike.trailhead_start" variant="solid">
-              <div>
-                <p class="text-sm text-gray-500 mb-1">Starting Point</p>
-                <p class="font-semibold">{{ hike.trailhead_start }}</p>
-              </div>
-            </UCard>
-            <UCard v-if="hike.trailhead_end" variant="solid">
-              <div>
-                <p class="text-sm text-gray-500 mb-1">Ending Point</p>
-                <p class="font-semibold">{{ hike.trailhead_end }}</p>
-              </div>
-            </UCard>
-          </UPageGrid>
-        </UPageSection>
-        <UPageSection>
+        <UPageSection :ui="{ container: 'sm:py-10 lg:py-10 m-0' }">
           <div class="prose prose-lg max-w-none dark:prose-invert">
             <MDC :value="hike.content" />
           </div>

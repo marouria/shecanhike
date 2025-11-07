@@ -25,22 +25,21 @@ const formatDuration = computed(() => {
 <template>
   <UPageAside>
     <div class="grid gap-3">
-      <div class="flex gap-2">
-        <UBadge
-          v-if="hike.difficulty"
-          size="lg"
-          :color="
-            hike.difficulty === 'easy'
-              ? 'success'
-              : hike.difficulty === 'moderate'
-              ? 'warning'
-              : hike.difficulty === 'hard'
-              ? 'error'
-              : 'secondary'
-          "
-        >
-          {{ hike.difficulty }}
-        </UBadge>
+      <div
+        v-if="hike.difficulty"
+        size="lg"
+        class="text-white text-center bg-secondary font-bold rounded-sm"
+        :color="
+          hike.difficulty === 'easy'
+            ? 'secondary'
+            : hike.difficulty === 'moderate'
+            ? 'warning'
+            : hike.difficulty === 'hard'
+            ? 'error'
+            : 'secondary'
+        "
+      >
+        {{ hike.difficulty }}
       </div>
       <UCard v-if="hike.distance_km" variant="ghost">
         <div class="flex items-center gap-3">

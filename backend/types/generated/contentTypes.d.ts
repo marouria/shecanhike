@@ -576,28 +576,152 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiHikeHike extends Struct.CollectionTypeSchema {
-  collectionName: 'hikes';
+export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
+  collectionName: 'hiking-spots';
   info: {
-    displayName: 'Hike';
-    pluralName: 'hikes';
-    singularName: 'hike';
+    displayName: 'Hiking Spot';
+    pluralName: 'hiking-spots';
+    singularName: 'hiking-spot';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    accomodation: Schema.Attribute.Boolean;
+    altitude_max: Schema.Attribute.Integer;
+    altitude_min: Schema.Attribute.Integer;
+    best_season: Schema.Attribute.Enumeration<
+      ['spring', 'summer', 'fall', 'winter']
+    >;
+    camping: Schema.Attribute.Boolean;
+    content: Schema.Attribute.RichText;
     country: Schema.Attribute.String;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    difficulty: Schema.Attribute.Enumeration<
+      ['easy', 'moderate', 'hard', 'expert']
+    >;
+    distance_km: Schema.Attribute.Decimal;
+    duration_days: Schema.Attribute.Integer;
+    duration_hours: Schema.Attribute.Decimal;
+    elevation_gain: Schema.Attribute.Integer;
+    elevation_loss: Schema.Attribute.Integer;
+    excerpt: Schema.Attribute.Text;
+    inspirations: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::inspiration.inspiration'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hike.hike'> &
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hiking-spot.hiking-spot'
+    > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
+    meta_description: Schema.Attribute.String;
+    meta_title: Schema.Attribute.String;
+    public_transportation: Schema.Attribute.Boolean;
+    published_date: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    trail_type: Schema.Attribute.Enumeration<
+      ['loop', 'out_and_back', 'point_to_point']
+    >;
+    trailhead_end: Schema.Attribute.String;
+    trailhead_start: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.String;
+  };
+}
+
+export interface ApiInspirationInspiration extends Struct.CollectionTypeSchema {
+  collectionName: 'inspirations';
+  info: {
+    displayName: 'Inspiration';
+    pluralName: 'inspirations';
+    singularName: 'inspiration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    color: Schema.Attribute.Enumeration<
+      [
+        'blue',
+        'light_blue',
+        'cyan',
+        'gray',
+        'yellow',
+        'green',
+        'red',
+        'brown',
+        'orange',
+        'lime',
+      ]
+    >;
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    excerpt: Schema.Attribute.Text;
+    hiking_spots: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::hiking-spot.hiking-spot'
+    >;
+    icon: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::inspiration.inspiration'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
+  collectionName: 'locations';
+  info: {
+    displayName: 'Location';
+    pluralName: 'locations';
+    singularName: 'location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    access_info: Schema.Attribute.Text;
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    description_short: Schema.Attribute.Text;
+    hiking_spots: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hiking-spot.hiking-spot'
+    >;
+    latitude: Schema.Attribute.BigInteger;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location.location'
+    > &
+      Schema.Attribute.Private;
+    longitude: Schema.Attribute.BigInteger;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1120,7 +1244,9 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
-      'api::hike.hike': ApiHikeHike;
+      'api::hiking-spot.hiking-spot': ApiHikingSpotHikingSpot;
+      'api::inspiration.inspiration': ApiInspirationInspiration;
+      'api::location.location': ApiLocationLocation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

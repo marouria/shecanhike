@@ -10,7 +10,7 @@ const loading = articleStore.loading;
 </script>
 
 <template>
-  <section id="blog" class="py-24">
+  <UContainer as="section" id="blog" class="py-24">
     <div class="max-w-7xl mx-auto">
       <div
         class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-16"
@@ -36,9 +36,9 @@ const loading = articleStore.loading;
           <p>Error loading articles: {{ error?.message }}</p>
         </template>
         <template v-else v-for="article in articles" :key="article.id">
-          <CardArticle :article="article" />
+          <ArticleCard :article="article" />
         </template>
       </div>
     </div>
-  </section>
+  </UContainer>
 </template>

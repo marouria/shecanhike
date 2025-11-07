@@ -1,9 +1,11 @@
 <template>
-  <HeroSection />
-  <HikesSection />
-  <AboutSection />
-  <CommunitySection />
-  <FeaturesSection />
-  <ComingSoonSection />
-  <ArticlesSection />
+  <UPage>
+    <HomeHero />
+    <HomeHikes />
+    <HomeAbout />
+    <HomeCommunity />
+    <HomeFeatures />
+    <HomeComingSoon />
+    <HomeArticles />
+  </UPage>
 </template>

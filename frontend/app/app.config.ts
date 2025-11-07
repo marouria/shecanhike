@@ -2,6 +2,8 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: "brand",
+      secondary: "secondary",
+      neutral: "text",
     },
     card: {
       slots: {
@@ -20,6 +22,16 @@ export default defineAppConfig({
       slots: {
         root: "bg-[#577067] pt-12 pb-8 text-white",
         left: "flex flex-col gap-3",
+      },
+    },
+    pageHeader: {
+      slots: {
+        root: "border-none",
+      },
+    },
+    pageCard: {
+      slots: {
+        description: "text-[15px] text-pretty",
       },
     },
   },

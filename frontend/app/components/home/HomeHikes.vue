@@ -1,23 +1,24 @@
 <script setup lang="ts">
-import { useHikeStore } from "~/stores/hike";
+import { useHikingSpotStore } from "~/stores/hiking-spot";
 
-const articleStore = useHikeStore();
-await articleStore.fetchHikes();
+const articleStore = useHikingSpotStore();
+await articleStore.fetchHikingSpots();
 
-const hikes = articleStore.hikes;
+const hikingSpots = articleStore.hikingSpots;
 
 const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
-  <section id="hikes" class="pt-16 pb-24">
+  <UContainer id="hiking-spots" as="section" class="py-24">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col items-center gap-6 mb-12">
-        <button
+        <NuxtLink
           class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base transition-all duration-200 hover:bg-primary hover:text-white"
+          to="/hiking-spots"
         >
-          Discover all hikes
-        </button>
+          Discover our hiking spots</NuxtLink
+        >
         <p class="text-center max-w-[700px] text-base leading-relaxed m-0">
           Find out the latest itineraries of shecanhike community around the
           world that blend nature and culture together
@@ -26,7 +27,7 @@ const { getImageUrl } = useStrapiImage();
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div
-          v-for="hike in hikes"
+          v-for="hike in hikingSpots"
           :key="hike.id"
           class="flex flex-col gap-4 transition-transform duration-200 hover:-translate-y-1"
         >
@@ -46,11 +47,11 @@ const { getImageUrl } = useStrapiImage();
               {{ hike.title }}
             </h3>
             <p class="text-sm leading-normal m-0">
-              {{ hike.description }}
+              {{ hike.excerpt }}
             </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </UContainer>
 </template>

@@ -1,10 +1,10 @@
 <template>
-  <section class="py-24">
+  <UContainer as="section" class="py-24">
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 items-center"
     >
       <div>
-        <ImageFrame
+        <SharedImageFrame
           imageUrl="/img/hero-main.jpg"
           class="m-auto lg:m-0 mr-auto"
         />
@@ -38,5 +38,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </UContainer>
 </template>

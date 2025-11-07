@@ -1,5 +1,6 @@
 <template>
-  <section
+  <UContainer
+    as="section"
     class="max-w-full m-0 relative min-h-screen flex items-center justify-center bg-[url('/img/coming-soon.jpg')] bg-cover bg-center bg-scroll md:bg-fixed"
   >
     <div class="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
@@ -47,7 +48,7 @@
         @click=""
       />
     </div>
-  </section>
+  </UContainer>
 </template>
 
 <style scoped>

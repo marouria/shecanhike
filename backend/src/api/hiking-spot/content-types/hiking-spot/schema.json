@@ -1,0 +1,124 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hiking-spots",
+  "info": {
+    "singularName": "hiking-spot",
+    "pluralName": "hiking-spots",
+    "displayName": "Hiking Spot"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": [
+        "easy",
+        "moderate",
+        "hard",
+        "expert"
+      ]
+    },
+    "duration_days": {
+      "type": "integer"
+    },
+    "duration_hours": {
+      "type": "decimal"
+    },
+    "distance_km": {
+      "type": "decimal"
+    },
+    "elevation_gain": {
+      "type": "integer"
+    },
+    "elevation_loss": {
+      "type": "integer"
+    },
+    "altitude_max": {
+      "type": "integer"
+    },
+    "altitude_min": {
+      "type": "integer"
+    },
+    "trail_type": {
+      "type": "enumeration",
+      "enum": [
+        "loop",
+        "out_and_back",
+        "point_to_point"
+      ]
+    },
+    "best_season": {
+      "type": "enumeration",
+      "enum": [
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ]
+    },
+    "accomodation": {
+      "type": "boolean"
+    },
+    "camping": {
+      "type": "boolean"
+    },
+    "public_transportation": {
+      "type": "boolean"
+    },
+    "video": {
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "string"
+    },
+    "published_date": {
+      "type": "date"
+    },
+    "trailhead_start": {
+      "type": "string"
+    },
+    "trailhead_end": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "inspirations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inspiration.inspiration",
+      "mappedBy": "hiking_spots"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

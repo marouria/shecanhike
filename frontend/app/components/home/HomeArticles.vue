@@ -36,7 +36,7 @@ const loading = articleStore.loading;
           <p>Error loading articles: {{ error?.message }}</p>
         </template>
         <template v-else v-for="article in articles" :key="article.id">
-          <CardArticle :article="article" />
+          <ArticleCard :article="article" />
         </template>
       </div>
     </div>

@@ -28,7 +28,7 @@
         </div>
       </div>
       <div>
-        <ImageFrame
+        <SharedImageFrame
           imageUrl="/img/hero-main.jpg"
           class="m-auto lg:m-0 lg:ml-auto"
         />

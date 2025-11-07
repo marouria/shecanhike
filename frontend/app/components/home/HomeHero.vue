@@ -2,7 +2,7 @@
   <UContainer as="section" class="py-24">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-16 items-center">
       <div class="hidden lg:block">
-        <ImageFrame imageUrl="/img/hero-main.jpg" />
+        <SharedImageFrame imageUrl="/img/hero-main.jpg" />
       </div>
       <div class="flex flex-col gap-12">
         <h1 class="text-5xl md:text-[3rem] font-bold leading-tight m-0">

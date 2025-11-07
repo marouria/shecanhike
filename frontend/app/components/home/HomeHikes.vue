@@ -47,7 +47,7 @@ const { getImageUrl } = useStrapiImage();
               {{ hike.title }}
             </h3>
             <p class="text-sm leading-normal m-0">
-              {{ hike.description }}
+              {{ hike.excerpt }}
             </p>
           </div>
         </div>

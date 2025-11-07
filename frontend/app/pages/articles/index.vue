@@ -24,7 +24,7 @@ const error = computed(() => articleStore.error);
             <p>Error loading articles: {{ error?.message }}</p>
           </template>
           <template v-else v-for="article in articles" :key="article.id">
-            <CardArticle class="flex-col md:flex-col" :article="article" />
+            <ArticleCard class="flex-col md:flex-col" :article="article" />
           </template>
         </div>
       </div>

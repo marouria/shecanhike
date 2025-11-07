@@ -14,9 +14,6 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "cover": {
       "type": "media",
       "multiple": false,
@@ -36,15 +33,6 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "highlight": {
-      "type": "enumeration",
-      "enum": [
-        "waterfall",
-        "views",
-        "temple",
-        "dears"
-      ]
     },
     "difficulty": {
       "type": "enumeration",
@@ -102,16 +90,6 @@
     "public_transportation": {
       "type": "boolean"
     },
-    "gallery": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "video": {
       "type": "string"
     },
@@ -132,6 +110,15 @@
     },
     "excerpt": {
       "type": "text"
+    },
+    "inspirations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inspiration.inspiration",
+      "mappedBy": "hiking_spots"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }

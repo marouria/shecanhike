@@ -32,7 +32,8 @@
   --color-background-light: #d3d1cc;
 
   /* Nuxt UI Semantic Color Overrides */
-  --ui-text-muted: theme('colors.gray.500');
+  --ui-text-muted: theme("colors.gray.500");
+  --ui-text-highlighted: var(--color-text);
 }
 
 body {

@@ -594,12 +594,12 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
       ['spring', 'summer', 'fall', 'winter']
     >;
     camping: Schema.Attribute.Boolean;
+    content: Schema.Attribute.RichText;
     country: Schema.Attribute.String;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
     difficulty: Schema.Attribute.Enumeration<
       ['easy', 'moderate', 'hard', 'expert']
     >;
@@ -609,12 +609,9 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     elevation_gain: Schema.Attribute.Integer;
     elevation_loss: Schema.Attribute.Integer;
     excerpt: Schema.Attribute.Text;
-    gallery: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    highlight: Schema.Attribute.Enumeration<
-      ['waterfall', 'views', 'temple', 'dears']
+    inspirations: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::inspiration.inspiration'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -639,6 +636,57 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     video: Schema.Attribute.String;
+  };
+}
+
+export interface ApiInspirationInspiration extends Struct.CollectionTypeSchema {
+  collectionName: 'inspirations';
+  info: {
+    displayName: 'Inspiration';
+    pluralName: 'inspirations';
+    singularName: 'inspiration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    color: Schema.Attribute.Enumeration<
+      [
+        'blue',
+        'light_blue',
+        'cyan',
+        'gray',
+        'yellow',
+        'green',
+        'red',
+        'brown',
+        'orange',
+        'lime',
+      ]
+    >;
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    excerpt: Schema.Attribute.Text;
+    hiking_spots: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::hiking-spot.hiking-spot'
+    >;
+    icon: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::inspiration.inspiration'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1197,6 +1245,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::hiking-spot.hiking-spot': ApiHikingSpotHikingSpot;
+      'api::inspiration.inspiration': ApiInspirationInspiration;
       'api::location.location': ApiLocationLocation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

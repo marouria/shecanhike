@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/ui",
     "@pinia/nuxt",
+    "@nuxtjs/mdc",
   ],
   css: ["~/assets/styles/main.css"],
   strapi: {

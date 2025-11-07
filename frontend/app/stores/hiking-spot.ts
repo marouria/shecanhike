@@ -33,8 +33,7 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
     try {
       const { findOne } = useStrapi();
       const data = await findOne<HikingSpot>("hiking-spots", id, {
-        fields: ["title", "description", "highlight"],
-        populate: ["cover"],
+        populate: "*",
       });
       hikingSpot.value = (data as any)?.data || data || null;
     } catch (e) {

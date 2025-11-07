@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inspirations",
+  "info": {
+    "singularName": "inspiration",
+    "pluralName": "inspirations",
+    "displayName": "Inspiration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "light_blue",
+        "cyan",
+        "gray",
+        "yellow",
+        "green",
+        "red",
+        "brown",
+        "orange",
+        "lime"
+      ]
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "hiking_spots": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hiking-spot.hiking-spot",
+      "inversedBy": "inspirations"
+    }
+  }
+}

@@ -33,6 +33,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       color: 'neutral',
       variant: 'subtle',
     }"
+    :ui="{ root: 'bg-default/85' }"
   >
     <template #title>
       <p class="text-2xl font-bold" to="/">SheCanHike</p>

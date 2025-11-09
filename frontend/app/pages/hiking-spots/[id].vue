@@ -41,7 +41,9 @@ const endingUrl = hike.value?.trailhead_end;
       <template v-else-if="hike">
         <UPageHero
           :title="hike.title"
-          :headline="`${hike.location}, ${hike.country}`"
+          :headline="`${useCapitalize(hike.location)}, ${useCapitalize(
+            hike.country
+          )}`"
           :ui="{ container: 'sm:gap-y-4 sm:py-10 lg:py-20' }"
           class="m-0"
         >

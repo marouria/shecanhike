@@ -41,7 +41,8 @@ const { getImageUrl } = useStrapiImage();
           </div>
           <div class="flex flex-col gap-2 items-center">
             <p class="text-sm leading-normal m-0">
-              {{ hike.location }}, {{ hike.country }}
+              {{ useCapitalize(hike.location) }},
+              {{ useCapitalize(hike.country) }}
             </p>
             <h3 class="text-2xl font-bold m-0">
               {{ hike.title }}

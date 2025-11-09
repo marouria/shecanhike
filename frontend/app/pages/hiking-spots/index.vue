@@ -26,7 +26,9 @@ const { getImageUrl } = useStrapiImage();
           :description="hike.excerpt"
         >
           <template #header>
-            <div class="w-full overflow-hidden bg-primary-200 rounded-xl">
+            <div
+              class="w-full overflow-hidden bg-primary-200 rounded-xl max-h-[260px]"
+            >
               <NuxtImg
                 v-if="hike.cover?.url"
                 :src="getImageUrl(hike.cover?.url)"

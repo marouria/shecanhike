@@ -29,9 +29,6 @@ const items = computed<NavigationMenuItem[]>(() => [
 
 <template>
   <UHeader
-    :ui="{
-      root: 'bg-background/50',
-    }"
     :toggle="{
       color: 'neutral',
       variant: 'subtle',

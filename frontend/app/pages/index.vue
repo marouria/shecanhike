@@ -1,11 +1,10 @@
 <template>
   <UPage>
     <HomeHero />
-    <HomeHikes />
+    <HomeFeatures />
     <HomeAbout />
     <HomeCommunity />
-    <HomeFeatures />
     <HomeComingSoon />
-    <HomeArticles />
+    <HomeHikingSpots />
   </UPage>
 </template>

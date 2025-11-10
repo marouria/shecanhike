@@ -21,21 +21,6 @@
     "icon": {
       "type": "string"
     },
-    "color": {
-      "type": "enumeration",
-      "enum": [
-        "blue",
-        "light_blue",
-        "cyan",
-        "gray",
-        "yellow",
-        "green",
-        "red",
-        "brown",
-        "orange",
-        "lime"
-      ]
-    },
     "excerpt": {
       "type": "text"
     },

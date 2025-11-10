@@ -130,7 +130,8 @@ const { formatTrailType, formatSeason } = useHikingSpotLabels();
         class="mr-2"
       >
         <UIcon name="i-heroicons-home" />
-        Accommodation Available
+        Mountain hut
+        <span>{{ hike.accomodation ? "✅" : "❌" }}</span>
       </UBadge>
 
       <UBadge
@@ -140,7 +141,8 @@ const { formatTrailType, formatSeason } = useHikingSpotLabels();
         class="mr-2"
       >
         <UIcon name="i-heroicons-fire" />
-        Camping Allowed
+        Camping
+        <span>{{ hike.camping ? "✅" : "❌" }}</span>
       </UBadge>
 
       <UBadge
@@ -150,6 +152,7 @@ const { formatTrailType, formatSeason } = useHikingSpotLabels();
       >
         <UIcon name="i-heroicons-truck" class="mr-1" />
         Public Transportation
+        <span>{{ hike.public_transportation ? "✅" : "❌" }}</span>
       </UBadge>
     </div>
   </div>

@@ -42,7 +42,12 @@ const items = computed<NavigationMenuItem[]>(() => [
     <!-- Large Screen Version -->
 
     <template #default>
-      <UNavigationMenu :items="items" color="neutral" variant="link" />
+      <UNavigationMenu
+        :items="items"
+        color="neutral"
+        variant="link"
+        class="text-gray-500"
+      />
     </template>
 
     <template #right>

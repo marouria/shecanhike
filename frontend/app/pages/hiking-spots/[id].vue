@@ -85,7 +85,7 @@ const endingUrl = hike.value?.trailhead_end;
       </template>
     </UPageBody>
     <template #right>
-      <HikingSpotAside v-if="hike" :hike="hike" />
+      <HikingSpotAside v-if="hike" :hike="hike" class="mt-[80px]" />
     </template>
   </UPage>
 </template>

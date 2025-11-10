@@ -9,7 +9,7 @@
             icon="i-simple-icons-instagram"
             color="neutral"
             variant="ghost"
-            to="/"
+            to="https://www.instagram.com/shecanhike/"
             target="_blank"
             aria-label="Instagram"
           />
@@ -17,7 +17,7 @@
             icon="i-simple-icons-tiktok"
             color="neutral"
             variant="ghost"
-            to="/"
+            to="https://www.tiktok.com/@shecanhike"
             target="_blank"
             aria-label="TikTok"
           />
@@ -25,7 +25,7 @@
             icon="i-simple-icons-youtube"
             color="neutral"
             variant="ghost"
-            to="/"
+            to="https://www.youtube.com/@shecanhike"
             target="_blank"
             aria-label="Youtube"
           />

@@ -17,28 +17,9 @@ const { getImageUrl } = useStrapiImage();
       <UPageHeader title="Hiking spots" headline="Japan" />
 
       <UPageColumns>
-        <UPageCard
-          v-for="(hike, index) in hikingSpots"
-          :key="index"
-          variant="naked"
-          :to="`/hiking-spots/${hike.documentId}`"
-          :title="hike.title"
-          :description="hike.excerpt"
-        >
-          <template #header>
-            <div
-              class="w-full overflow-hidden bg-primary-200 rounded-xl max-h-[260px]"
-            >
-              <NuxtImg
-                v-if="hike.cover?.url"
-                :src="getImageUrl(hike.cover?.url)"
-                :alt="hike.title"
-                class="object-cover w-full h-full"
-              />
-            </div>
-          </template>
-          <template #body> </template>
-        </UPageCard>
+        <template v-for="(hike, index) in hikingSpots">
+          <HikingSpotCard :hiking-spot="hike" />
+        </template>
       </UPageColumns>
     </UContainer>
   </UPage>

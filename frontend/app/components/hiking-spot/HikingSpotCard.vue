@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Article } from "~/types/article";
+import type { HikingSpot } from "~/types/hiking-spot";
 
 defineProps<{
-  article: Article;
+  hikingSpot: HikingSpot;
 }>();
 
 const { getImageUrl } = useStrapiImage();
@@ -15,25 +15,25 @@ const { getImageUrl } = useStrapiImage();
         class="w-full overflow-hidden bg-primary-200 aspect-video rounded-xl"
       >
         <NuxtImg
-          v-if="article.cover?.url"
-          :src="getImageUrl(article.cover?.url)"
-          :alt="article.title"
+          v-if="hikingSpot.cover?.url"
+          :src="getImageUrl(hikingSpot.cover?.url)"
+          :alt="hikingSpot.title"
           class="object-cover w-full h-full"
         />
       </div>
     </template>
 
-    <time class="text-sm">{{ article.date }}</time>
+    <time class="text-sm">{{ hikingSpot.published_date }}</time>
     <h3 class="line-clamp-2 text-2xl font-bold">
       <NuxtLink
-        :to="`/articles/${article.documentId}`"
+        :to="`/hiking-spots/${hikingSpot.documentId}`"
         class="after:absolute after:inset-0 after:z-[1]"
       >
-        {{ article.title }}
+        {{ hikingSpot.title }}
       </NuxtLink>
     </h3>
     <p class="line-clamp-3 leading-[1.6]">
-      {{ article.description }}
+      {{ hikingSpot.excerpt }}
     </p>
 
     <template #footer>

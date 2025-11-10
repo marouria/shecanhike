@@ -13,12 +13,12 @@ const { getImageUrl } = useStrapiImage();
   <UContainer id="hiking-spots" as="section" class="py-24">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col items-center gap-6 mb-12">
-        <NuxtLink
-          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base transition-all duration-200 hover:bg-primary hover:text-white"
-          to="/hiking-spots"
-        >
-          Discover our hiking spots</NuxtLink
-        >
+        <SharedNavigationButton
+          url="/hiking-spots"
+          label="Discover our hiking spots"
+          variant="outline"
+        />
+
         <p class="text-center max-w-[700px] text-base leading-relaxed m-0">
           Find out the latest itineraries of shecanhike community around the
           world that blend nature and culture together

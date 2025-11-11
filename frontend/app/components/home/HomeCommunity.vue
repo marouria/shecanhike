@@ -5,7 +5,7 @@
     >
       <div>
         <SharedImageFrame
-          imageUrl="/img/hero-main.jpg"
+          imageUrl="/img/community-main.JPG"
           class="m-auto lg:m-0 mr-auto"
         />
       </div>

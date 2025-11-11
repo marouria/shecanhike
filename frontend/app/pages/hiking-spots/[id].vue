@@ -78,7 +78,7 @@ const endingUrl = hike.value?.trailhead_end;
         </UPageHero>
         <UPageSection :ui="{ container: 'sm:py-10 lg:py-10 m-0' }">
           <HikingSpotData :hike="hike" class="lg:hidden" />
-          <div class="prose prose-lg max-w-none dark:prose-invert">
+          <div>
             <MDC :value="hike.content || ''" />
           </div>
         </UPageSection>

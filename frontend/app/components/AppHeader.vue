@@ -31,7 +31,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     :ui="{ root: 'bg-default/85' }"
   >
     <template #title>
-      <p class="text-2xl font-bold" to="/">SheCanHike</p>
+      <Logo class="h-6 w-auto">SheCanHike</Logo>
     </template>
 
     <!-- Large Screen Version -->

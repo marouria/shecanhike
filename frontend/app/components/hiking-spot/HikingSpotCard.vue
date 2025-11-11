@@ -9,7 +9,7 @@ const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
-  <UCard variant="solid" class="bg-transparent relative card-with-arrow group">
+  <UCard class="relative card-with-arrow group">
     <template #header>
       <div
         class="w-full overflow-hidden bg-primary-200 aspect-video rounded-xl"

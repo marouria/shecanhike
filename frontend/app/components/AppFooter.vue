@@ -44,7 +44,7 @@
               >Terms and Conditions</a
             >
           </div>
-          <p class="text-muted text-sm">
+          <p class="text-sm">
             Copyright © {{ new Date().getFullYear() }} Shecanhike. All rights
             reserved.
           </p>

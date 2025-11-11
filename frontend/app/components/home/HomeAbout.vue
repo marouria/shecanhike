@@ -31,7 +31,7 @@
       </div>
       <div>
         <SharedImageFrame
-          imageUrl="/img/hero-main.jpg"
+          imageUrl="/img/about-main.jpg"
           class="m-auto lg:m-0 lg:ml-auto"
         />
       </div>

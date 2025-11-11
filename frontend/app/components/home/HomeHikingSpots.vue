@@ -29,8 +29,7 @@ const { getImageUrl } = useStrapiImage();
         <UCard
           v-for="hike in hikingSpots"
           :key="hike.id"
-          variant="solid"
-          class="bg-transparent flex flex-col gap-4 transition-transform duration-200 hover:-translate-y-1"
+          class="transition-transform duration-200 hover:-translate-y-1"
         >
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg

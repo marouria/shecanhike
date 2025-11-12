@@ -3,7 +3,7 @@ export default defineAppConfig({
     colors: {
       primary: "brand",
       secondary: "secondary",
-      neutral: "text",
+      neutral: "secondary",
     },
     card: {
       slots: {
@@ -11,6 +11,11 @@ export default defineAppConfig({
         header: "p-0 sm:px-0",
         body: "flex flex-col gap-5 p-0 sm:p-0 h-full",
         footer: "p-0 sm:px-0",
+      },
+      variants: {
+        variant: {
+          outline: { root: "ring-0 divide-none" },
+        },
       },
     },
     header: {
@@ -33,6 +38,16 @@ export default defineAppConfig({
       slots: {
         description: "text-[15px] text-pretty",
       },
+    },
+    button: {
+      compoundVariants: [
+        {
+          color: "neutral",
+          variant: "outline",
+          class:
+            "text-secondary-700 hover:text-white hover:bg-secondary-700 hover:ring-0",
+        },
+      ],
     },
   },
 });

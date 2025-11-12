@@ -4,11 +4,13 @@
       class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
     >
       <div class="flex flex-col gap-8">
-        <button
-          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base transition-all duration-200 self-start hover:bg-primary hover:text-white"
-        >
-          About shecanhike
-        </button>
+        <div>
+          <SharedNavigationButton
+            url="/about"
+            label="About shecanhike"
+            variant="outline"
+          />
+        </div>
         <h2 class="text-4xl md:text-[2.5rem] font-bold leading-tight m-0">
           Let's go out and explore the world with hiking
         </h2>
@@ -29,7 +31,7 @@
       </div>
       <div>
         <SharedImageFrame
-          imageUrl="/img/hero-main.jpg"
+          imageUrl="/img/about-main.jpg"
           class="m-auto lg:m-0 lg:ml-auto"
         />
       </div>

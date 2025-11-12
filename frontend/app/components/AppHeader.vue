@@ -15,11 +15,6 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: route.path.startsWith("/about"),
   },
   {
-    label: "Blog",
-    to: "/articles",
-    active: route.path.startsWith("/articles"),
-  },
-  {
     label: "Contact",
     to: "/contact",
     active: route.path.startsWith("/contact"),
@@ -36,7 +31,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     :ui="{ root: 'bg-default/85' }"
   >
     <template #title>
-      <p class="text-2xl font-bold" to="/">SheCanHike</p>
+      <Logo class="h-6 w-auto">SheCanHike</Logo>
     </template>
 
     <!-- Large Screen Version -->

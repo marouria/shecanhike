@@ -5,16 +5,18 @@
     >
       <div>
         <SharedImageFrame
-          imageUrl="/img/hero-main.jpg"
+          imageUrl="/img/community-main.JPG"
           class="m-auto lg:m-0 mr-auto"
         />
       </div>
       <div class="flex flex-col gap-8">
-        <button
-          class="bg-transparent text-primary border-2 border-primary py-3 px-6 rounded text-base transition-all duration-200 self-start hover:bg-primary hover:text-white"
-        >
-          Join the community
-        </button>
+        <div>
+          <SharedNavigationButton
+            url="/"
+            label="Join the community"
+            variant="outline"
+          />
+        </div>
         <h2 class="text-4xl md:text-[2.5rem] font-bold leading-tight m-0">
           Why you should join shecanhike community for hiking
         </h2>

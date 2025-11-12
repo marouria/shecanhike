@@ -9,7 +9,8 @@
             icon="i-simple-icons-instagram"
             color="neutral"
             variant="ghost"
-            to="/"
+            class="text-white hover:text-secondary-700"
+            to="https://www.instagram.com/shecanhike/"
             target="_blank"
             aria-label="Instagram"
           />
@@ -17,7 +18,8 @@
             icon="i-simple-icons-tiktok"
             color="neutral"
             variant="ghost"
-            to="/"
+            class="text-white hover:text-secondary-700"
+            to="https://www.tiktok.com/@shecanhike"
             target="_blank"
             aria-label="TikTok"
           />
@@ -25,7 +27,8 @@
             icon="i-simple-icons-youtube"
             color="neutral"
             variant="ghost"
-            to="/"
+            class="text-white hover:text-secondary-700"
+            to="https://www.youtube.com/@shecanhike"
             target="_blank"
             aria-label="Youtube"
           />
@@ -44,7 +47,7 @@
               >Terms and Conditions</a
             >
           </div>
-          <p class="text-muted text-sm">
+          <p class="text-sm">
             Copyright © {{ new Date().getFullYear() }} Shecanhike. All rights
             reserved.
           </p>

@@ -650,20 +650,6 @@ export interface ApiInspirationInspiration extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    color: Schema.Attribute.Enumeration<
-      [
-        'blue',
-        'light_blue',
-        'cyan',
-        'gray',
-        'yellow',
-        'green',
-        'red',
-        'brown',
-        'orange',
-        'lime',
-      ]
-    >;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

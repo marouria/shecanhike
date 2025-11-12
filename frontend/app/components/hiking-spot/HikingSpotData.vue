@@ -21,135 +21,130 @@ const formatDuration = computed(() => {
 });
 
 const { formatTrailType, formatSeason } = useHikingSpotLabels();
+
+const hikingStats = computed(() => [
+  {
+    key: "difficulty",
+    icon: "i-heroicons-map",
+    label: "Difficulty",
+    value: props.hike.difficulty,
+    show: !!props.hike.difficulty,
+  },
+  {
+    key: "distance",
+    icon: "i-heroicons-map",
+    label: "Distance",
+    value: props.hike.distance_km ? `${props.hike.distance_km} km` : null,
+    show: !!props.hike.distance_km,
+  },
+  {
+    key: "duration",
+    icon: "i-heroicons-clock",
+    label: "Duration",
+    value: formatDuration.value,
+    show: !!formatDuration.value,
+  },
+  {
+    key: "elevation_gain",
+    icon: "i-heroicons-arrow-trending-up",
+    label: "Elevation Gain",
+    value: props.hike.elevation_gain ? `${props.hike.elevation_gain} m` : null,
+    show: !!props.hike.elevation_gain,
+  },
+  {
+    key: "elevation_loss",
+    icon: "i-heroicons-arrow-trending-down",
+    label: "Elevation Loss",
+    value: props.hike.elevation_loss ? `${props.hike.elevation_loss} m` : null,
+    show: !!props.hike.elevation_loss,
+  },
+  {
+    key: "altitude_max",
+    icon: "i-heroicons-arrow-up",
+    label: "Max Altitude",
+    value: props.hike.altitude_max ? `${props.hike.altitude_max} m` : null,
+    show: !!props.hike.altitude_max,
+  },
+  {
+    key: "altitude_min",
+    icon: "i-heroicons-arrow-down",
+    label: "Min Altitude",
+    value: props.hike.altitude_min ? `${props.hike.altitude_min} m` : null,
+    show: !!props.hike.altitude_min,
+  },
+  {
+    key: "best_season",
+    icon: "i-lucide-sun",
+    label: "Best season",
+    value: props.hike.best_season ? formatSeason(props.hike.best_season) : null,
+    show: !!props.hike.best_season,
+  },
+  {
+    key: "trail_type",
+    icon: "i-lucide-route",
+    label: "Trail type",
+    value: props.hike.trail_type
+      ? formatTrailType(props.hike.trail_type)
+      : null,
+    show: !!props.hike.trail_type,
+  },
+]);
+
+const amenities = computed(() => [
+  {
+    key: "accomodation",
+    icon: "i-heroicons-home",
+    label: "Mountain hut",
+    available: props.hike.accomodation,
+  },
+  {
+    key: "camping",
+    icon: "i-heroicons-fire",
+    label: "Camping",
+    available: props.hike.camping,
+  },
+  {
+    key: "public_transportation",
+    icon: "i-heroicons-truck",
+    label: "Public transportation",
+    available: props.hike.public_transportation,
+  },
+]);
 </script>
 
 <template>
   <div class="grid gap-3">
     <div class="grid gap-3 grid-cols-2 lg:grid-cols-1">
-      <UCard v-if="hike.difficulty" variant="ghost">
+      <UCard
+        v-for="stat in hikingStats"
+        v-show="stat.show"
+        :key="stat.key"
+        variant="ghost"
+      >
         <div class="flex items-center gap-3">
-          <UIcon name="i-heroicons-map" class="text-2xl text-primary" />
+          <UIcon :name="stat.icon" class="text-2xl text-primary" />
           <div>
-            <p class="text-sm text-gray-500">Difficulty</p>
-            <p class="font-semibold">{{ hike.difficulty }}</p>
-          </div>
-        </div>
-      </UCard>
-      <UCard v-if="hike.distance_km" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon name="i-heroicons-map" class="text-2xl text-primary" />
-          <div>
-            <p class="text-sm text-gray-500">Distance</p>
-            <p class="font-semibold">{{ hike.distance_km }} km</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="formatDuration" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon name="i-heroicons-clock" class="text-2xl text-primary" />
-          <div>
-            <p class="text-sm text-gray-500">Duration</p>
-            <p class="font-semibold">{{ formatDuration }}</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="hike.elevation_gain" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon
-            name="i-heroicons-arrow-trending-up"
-            class="text-2xl text-primary"
-          />
-          <div>
-            <p class="text-sm text-gray-500">Elevation Gain</p>
-            <p class="font-semibold">{{ hike.elevation_gain }} m</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="hike.elevation_loss" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon
-            name="i-heroicons-arrow-trending-down"
-            class="text-2xl text-primary"
-          />
-          <div>
-            <p class="text-sm text-gray-500">Elevation Loss</p>
-            <p class="font-semibold">{{ hike.elevation_loss }} m</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="hike.altitude_max" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon name="i-heroicons-arrow-up" class="text-2xl text-primary" />
-          <div>
-            <p class="text-sm text-gray-500">Max Altitude</p>
-            <p class="font-semibold">{{ hike.altitude_max }} m</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="hike.altitude_min" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon name="i-heroicons-arrow-down" class="text-2xl text-primary" />
-          <div>
-            <p class="text-sm text-gray-500">Min Altitude</p>
-            <p class="font-semibold">{{ hike.altitude_min }} m</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="hike.best_season" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon name="i-lucide-sun" class="text-2xl text-primary" />
-          <div>
-            <p class="text-sm text-gray-500">Best season</p>
-            <p class="font-semibold">{{ formatSeason(hike.best_season) }}</p>
-          </div>
-        </div>
-      </UCard>
-
-      <UCard v-if="hike.trail_type" variant="ghost">
-        <div class="flex items-center gap-3">
-          <UIcon name="i-lucide-route" class="text-2xl text-primary" />
-          <div>
-            <p class="text-sm text-gray-500">Trail type</p>
-            <p class="font-semibold">{{ formatTrailType(hike.trail_type) }}</p>
+            <p class="text-sm text-gray-500">{{ stat.label }}</p>
+            <p class="font-semibold">{{ stat.value }}</p>
           </div>
         </div>
       </UCard>
     </div>
 
-    <div class="lg:flex lg:flex-col items-start *:mr-2 *:mb-2 lg:mb-0">
+    <div class="flex flex-wrap gap-3 lg:flex-col lg:items-start">
       <UBadge
+        v-for="amenity in amenities"
+        :key="amenity.key"
         size="lg"
-        :color="hike.accomodation ? 'secondary' : 'error'"
-        variant="subtle"
-        class="mr-2"
-      >
-        <UIcon name="i-heroicons-home" />
-        Accommodation Available
-      </UBadge>
-
-      <UBadge
-        size="lg"
-        :color="hike.camping ? 'secondary' : 'error'"
-        variant="subtle"
-        class="mr-2"
-      >
-        <UIcon name="i-heroicons-fire" />
-        Camping Allowed
-      </UBadge>
-
-      <UBadge
-        size="lg"
-        :color="hike.public_transportation ? 'secondary' : 'error'"
+        :color="amenity.available ? 'secondary' : 'error'"
         variant="subtle"
       >
-        <UIcon name="i-heroicons-truck" class="mr-1" />
-        Public Transportation
+        <UIcon :name="amenity.icon" />
+        <p>
+          {{ amenity.available ? "" : "NO" }}
+          {{ amenity.label }}
+          {{ amenity.available ? "✅" : "" }}
+        </p>
       </UBadge>
     </div>
   </div>

@@ -44,7 +44,8 @@ export default defineAppConfig({
         {
           color: "neutral",
           variant: "outline",
-          class: "text-secondary-700 hover:text-white",
+          class:
+            "text-secondary-700 hover:text-white hover:bg-secondary-700 hover:ring-0",
         },
       ],
     },

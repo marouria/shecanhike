@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   runtimeConfig: {
+    hubspotApiKey: process.env.HUBSPOT_API_KEY,
     public: {
       strapi: {
         url: process.env.STRAPI_URL,

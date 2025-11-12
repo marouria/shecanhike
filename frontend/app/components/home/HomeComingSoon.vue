@@ -17,13 +17,29 @@ const state = reactive<Partial<Schema>>({
 });
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  toast.add({
-    title: "Thank you!",
-    description: "We well received your email.",
-    color: "success",
-  });
-  // Need to store the email somehow
-  open.value = false;
+  try {
+    await $fetch("/api/hubspot/contact", {
+      method: "POST",
+      body: {
+        email: event.data.email,
+      },
+    });
+
+    toast.add({
+      title: "Thank you!",
+      description: "We well received your email.",
+      color: "success",
+    });
+
+    open.value = false;
+  } catch (error) {
+    console.error("Error saving email:", error);
+    toast.add({
+      title: "Error",
+      description: "Failed to save your email. Please try again.",
+      color: "error",
+    });
+  }
 }
 </script>
 

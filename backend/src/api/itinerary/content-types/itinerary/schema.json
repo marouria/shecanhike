@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "itineraries",
+  "info": {
+    "singularName": "itinerary",
+    "pluralName": "itineraries",
+    "displayName": "Itinerary"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": [
+        "easy",
+        "intermediate",
+        "hard",
+        "expert"
+      ]
+    },
+    "duration_hours": {
+      "type": "decimal"
+    },
+    "distance_km": {
+      "type": "decimal"
+    },
+    "elevation_gain": {
+      "type": "integer"
+    },
+    "elevation_loss": {
+      "type": "integer"
+    },
+    "trail_type": {
+      "type": "enumeration",
+      "enum": [
+        "loop",
+        "out_and_back",
+        "point_to_point"
+      ]
+    },
+    "public_transportation": {
+      "type": "boolean"
+    },
+    "trailhead_start": {
+      "type": "string"
+    },
+    "trailhead_end": {
+      "type": "string"
+    },
+    "camping": {
+      "type": "boolean"
+    },
+    "accomodation": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

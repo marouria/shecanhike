@@ -20,7 +20,7 @@ const formatDuration = computed(() => {
   return parts.join(" ");
 });
 
-const { formatTrailType, formatSeason } = useHikingSpotLabels();
+const { formatTrailType } = useHikingSpotLabels();
 
 const itineraryStats = computed(() => [
   {

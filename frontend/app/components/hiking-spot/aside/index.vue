@@ -10,6 +10,6 @@ defineProps<Props>();
 
 <template>
   <UPageAside>
-    <HikingSpotData :hike="hike" />
+    <HikingSpotAsideData :hike="hike" />
   </UPageAside>
 </template>

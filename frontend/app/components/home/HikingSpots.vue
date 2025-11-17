@@ -15,7 +15,7 @@ const { getImageUrl } = useStrapiImage();
       <div class="flex flex-col items-center gap-6 mb-12">
         <SharedNavigationButton
           url="/hiking-spots"
-          label="Discover our hiking spots"
+          label="Discover our hikes"
           variant="outline"
         />
 

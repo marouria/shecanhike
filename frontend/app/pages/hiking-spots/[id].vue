@@ -8,6 +8,8 @@ const hikingSpotId = computed(() => route.params.id as string);
 
 await hikingSpotStore.fetchHikingSpotById(hikingSpotId.value);
 
+const active = ref("0");
+
 const hike = computed(() => hikingSpotStore.hikingSpot);
 const loading = computed(() => hikingSpotStore.loading);
 const error = computed(() => hikingSpotStore.error);
@@ -78,11 +80,20 @@ const { getImageUrl } = useStrapiImage();
           <UPageSection :ui="{ container: 'sm:py-10 lg:py-10 m-0' }">
             <UAccordion
               :items="hike.itineraries"
-              :ui="{ item: 'border-gray-300' }"
+              v-model="active"
+              :ui="{
+                item: 'border-gray-300',
+                body: 'pt-2 md:pt-0',
+              }"
             >
               <template #leading="{ item, index }">
-                <span class="font-bold">Itinerary #{{ index + 1 }}</span>
-                <p class="font-normal">{{ item.title }}</p>
+                <span
+                  class="text-base md:text-lg font-normal whitespace-nowrap h-full"
+                  >Itinerary #{{ index + 1 }}</span
+                >
+                <p class="text-base font-bold md:text-lg text-start">
+                  {{ item.title }}
+                </p>
               </template>
               <template #body="{ item }">
                 <ItineraryData :itinerary="item" />

@@ -5,12 +5,12 @@ const route = useRoute();
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: "Hiking Spots",
+    label: "Hikes",
     to: "/hiking-spots",
     active: route.path.startsWith("/hiking-spots"),
   },
   {
-    label: "About Us",
+    label: "About",
     to: "/about",
     active: route.path.startsWith("/about"),
   },
@@ -31,7 +31,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     :ui="{ root: 'bg-default/85' }"
   >
     <template #title>
-      <Logo class="h-6 w-auto">SheCanHike</Logo>
+      <span class="h-6 w-auto">SheCanHike</span>
     </template>
 
     <!-- Large Screen Version -->

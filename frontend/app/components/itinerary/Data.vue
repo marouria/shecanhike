@@ -130,6 +130,42 @@ const amenities = computed(() => [
           </div>
         </div>
       </UCard>
+
+      <UCard v-show="itinerary.trailhead_start" variant="ghost">
+        <div class="flex items-center gap-3">
+          <UIcon name="i-lucide-map-pin" class="text-2xl text-primary" />
+          <div>
+            <p class="text-sm text-gray-500">Starting Trailhead</p>
+            <a
+              :href="itinerary.trailhead_start"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-sm hover:underline"
+            >
+              <UIcon name="i-lucide-external-link" class="text-xs" />
+              Open in Maps
+            </a>
+          </div>
+        </div>
+      </UCard>
+
+      <UCard v-show="itinerary.trailhead_end" variant="ghost">
+        <div class="flex items-center gap-3">
+          <UIcon name="i-lucide-map-pin" class="text-2xl text-primary" />
+          <div>
+            <p class="text-sm text-gray-500">Ending Trailhead</p>
+            <a
+              :href="itinerary.trailhead_end"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-sm hover:underline"
+            >
+              <UIcon name="i-lucide-external-link" class="text-xs" />
+              Open in Maps
+            </a>
+          </div>
+        </div>
+      </UCard>
     </div>
   </div>
 </template>

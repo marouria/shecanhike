@@ -587,31 +587,25 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    accomodation: Schema.Attribute.Boolean;
     altitude_max: Schema.Attribute.Integer;
     altitude_min: Schema.Attribute.Integer;
     best_season: Schema.Attribute.Enumeration<
       ['spring', 'summer', 'fall', 'winter']
     >;
-    camping: Schema.Attribute.Boolean;
     content: Schema.Attribute.RichText;
     country: Schema.Attribute.String;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    difficulty: Schema.Attribute.Enumeration<
-      ['easy', 'moderate', 'hard', 'expert']
-    >;
-    distance_km: Schema.Attribute.Decimal;
-    duration_days: Schema.Attribute.Integer;
-    duration_hours: Schema.Attribute.Decimal;
-    elevation_gain: Schema.Attribute.Integer;
-    elevation_loss: Schema.Attribute.Integer;
     excerpt: Schema.Attribute.Text;
     inspirations: Schema.Attribute.Relation<
       'manyToMany',
       'api::inspiration.inspiration'
+    >;
+    itineraries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::itinerary.itinerary'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -622,16 +616,10 @@ export interface ApiHikingSpotHikingSpot extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.String;
     meta_description: Schema.Attribute.String;
     meta_title: Schema.Attribute.String;
-    public_transportation: Schema.Attribute.Boolean;
     published_date: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
-    trail_type: Schema.Attribute.Enumeration<
-      ['loop', 'out_and_back', 'point_to_point']
-    >;
-    trailhead_end: Schema.Attribute.String;
-    trailhead_start: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -670,6 +658,50 @@ export interface ApiInspirationInspiration extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiItineraryItinerary extends Struct.CollectionTypeSchema {
+  collectionName: 'itineraries';
+  info: {
+    displayName: 'Itinerary';
+    pluralName: 'itineraries';
+    singularName: 'itinerary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accomodation: Schema.Attribute.Boolean;
+    camping: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    difficulty: Schema.Attribute.Enumeration<
+      ['easy', 'intermediate', 'hard', 'expert']
+    >;
+    distance_km: Schema.Attribute.Decimal;
+    duration_hours: Schema.Attribute.Decimal;
+    elevation_gain: Schema.Attribute.Integer;
+    elevation_loss: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::itinerary.itinerary'
+    > &
+      Schema.Attribute.Private;
+    public_transportation: Schema.Attribute.Boolean;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    trail_type: Schema.Attribute.Enumeration<
+      ['loop', 'out_and_back', 'point_to_point']
+    >;
+    trailhead_end: Schema.Attribute.String;
+    trailhead_start: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1232,6 +1264,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::hiking-spot.hiking-spot': ApiHikingSpotHikingSpot;
       'api::inspiration.inspiration': ApiInspirationInspiration;
+      'api::itinerary.itinerary': ApiItineraryItinerary;
       'api::location.location': ApiLocationLocation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

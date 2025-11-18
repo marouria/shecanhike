@@ -14,7 +14,7 @@ const { getImageUrl } = useStrapiImage();
 <template>
   <UPage>
     <UContainer as="section" class="py-24">
-      <UPageHeader title="Hiking spots" headline="Japan" />
+      <UPageHeader title="All hikes" headline="Asia" />
 
       <UPageColumns>
         <template v-for="(hike, index) in hikingSpots">

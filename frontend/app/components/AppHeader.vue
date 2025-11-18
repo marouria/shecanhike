@@ -26,7 +26,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     :ui="{ root: 'bg-default/85' }"
   >
     <template #title>
-      <span class="h-6 w-auto">SheCanHike</span>
+      <NuxtImg
+        src="/img/logo.png"
+        alt="Hiking trail in mountains"
+        class="max-h-[50px]"
+      />
     </template>
 
     <!-- Large Screen Version -->

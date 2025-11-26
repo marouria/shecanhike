@@ -46,7 +46,7 @@ const { getImageUrl } = useStrapiImage();
             </p>
             <h3 class="line-clamp-2 text-2xl font-bold m-0">
               <NuxtLink
-                :to="`/hiking-spots/${hike.slug}`"
+                :to="`/${hike.slug}`"
                 class="after:absolute after:inset-0 after:z-[1]"
               >
                 {{ hike.title }}

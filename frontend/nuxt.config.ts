@@ -10,7 +10,14 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@pinia/nuxt",
     "@nuxtjs/mdc",
+    "@nuxtjs/seo",
+    "@nuxtjs/i18n",
   ],
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+    strategy: "prefix",
+  },
   css: ["~/assets/styles/main.css"],
   strapi: {
     url: process.env.STRAPI_URL,

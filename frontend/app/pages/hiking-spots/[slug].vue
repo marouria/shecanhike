@@ -4,9 +4,9 @@ import { useHikingSpotStore } from "~/stores/hiking-spot";
 const route = useRoute();
 const hikingSpotStore = useHikingSpotStore();
 
-const hikingSpotId = computed(() => route.params.id as string);
+const hikingSpotSlug = computed(() => route.params.slug as string);
 
-await hikingSpotStore.fetchHikingSpotById(hikingSpotId.value);
+await hikingSpotStore.fetchHikingSpotBySlug(hikingSpotSlug.value);
 
 const active = ref("0");
 

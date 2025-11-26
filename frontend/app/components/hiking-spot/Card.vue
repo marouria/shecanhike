@@ -26,7 +26,7 @@ const { getImageUrl } = useStrapiImage();
     <time class="text-sm">{{ hikingSpot.published_date }}</time>
     <h3 class="line-clamp-2 text-2xl font-bold">
       <NuxtLink
-        :to="`/hiking-spots/${hikingSpot.documentId}`"
+        :to="`/hiking-spots/${hikingSpot.slug}`"
         class="after:absolute after:inset-0 after:z-[1]"
       >
         {{ hikingSpot.title }}

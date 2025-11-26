@@ -14,7 +14,7 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
     error.value = null;
     try {
       const { data } = await find<HikingSpot>("hiking-spots", {
-        fields: ["title", "excerpt", "location", "country"],
+        fields: ["title", "slug", "excerpt", "location", "country"],
         populate: ["cover"],
       });
       hikingSpots.value = data || [];
@@ -26,20 +26,32 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
     }
   };
 
-  const fetchHikingSpotById = async (id: string | undefined) => {
+  const fetchHikingSpotBySlug = async (slug: string | undefined) => {
     loading.value = true;
     error.value = null;
     hikingSpot.value = null;
+
+    if (!slug) {
+      error.value = new Error("Slug is required");
+      loading.value = false;
+      return;
+    }
+
     try {
-      const { findOne } = useStrapi();
-      const data = await findOne<HikingSpot>("hiking-spots", id, {
+      const { find } = useStrapi();
+      const { data } = await find<HikingSpot>("hiking-spots", {
+        filters: {
+          slug: {
+            $eq: slug,
+          },
+        },
         populate: "*",
       });
-      hikingSpot.value = (data as any)?.data || data || null;
+      hikingSpot.value = data?.[0] || null;
     } catch (e) {
       error.value = e as Error;
       console.log("error:", error);
-      console.error("Error fetching article:", e);
+      console.error("Error fetching hiking spot by slug:", e);
     } finally {
       loading.value = false;
     }
@@ -51,6 +63,6 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
     loading,
     error,
     fetchHikingSpots,
-    fetchHikingSpotById,
+    fetchHikingSpotBySlug,
   };
 });

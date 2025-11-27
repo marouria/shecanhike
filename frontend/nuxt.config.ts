@@ -35,4 +35,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  app: {
+    head: {
+      title: "She Can Hike",
+    },
+  },
 });

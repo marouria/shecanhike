@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
+const { locale } = useI18n();
 
 const route = useRoute();
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Hikes",
-    to: "/hiking-spots",
-    active: route.path.startsWith("/hiking-spots"),
+    to: `/${locale.value}/hiking-spots`,
+    active: route.path.startsWith(`/${locale.value}/hiking-spots`),
   },
   {
     label: "About",
-    to: "/about",
-    active: route.path.startsWith("/about"),
+    to: `/${locale.value}/about`,
+    active: route.path.startsWith(`/${locale.value}/about`),
   },
 ]);
 </script>

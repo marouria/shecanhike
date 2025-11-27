@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { locale } = useI18n();
+
 interface Props {
   url: string;
   label: string;
@@ -19,7 +21,7 @@ const classes = {
 <template>
   <NuxtLink
     :class="`py-3 px-6 rounded transition-all duration-200 ${classes[variant]}`"
-    :to="url"
+    :to="`/${locale}/${url}`"
   >
     {{ label }}</NuxtLink
   >

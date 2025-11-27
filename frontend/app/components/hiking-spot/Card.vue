@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { HikingSpot } from "~/types/hiking-spot";
+const { locale } = useI18n();
 
 defineProps<{
   hikingSpot: HikingSpot;
@@ -26,7 +27,7 @@ const { getImageUrl } = useStrapiImage();
     <time class="text-sm">{{ hikingSpot.published_date }}</time>
     <h3 class="line-clamp-2 text-2xl font-bold">
       <NuxtLink
-        :to="`/${hikingSpot.slug}`"
+        :to="`/${locale}/${hikingSpot.slug}`"
         class="after:absolute after:inset-0 after:z-[1]"
       >
         {{ hikingSpot.title }}

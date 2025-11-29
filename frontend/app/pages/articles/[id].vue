@@ -41,6 +41,7 @@ const { getImageUrl } = useStrapiImage();
             >
               <NuxtImg
                 v-if="article.cover?.url"
+                format="webp"
                 :src="getImageUrl(article.cover?.url)"
                 :alt="article.title"
                 class="object-cover w-full h-full"

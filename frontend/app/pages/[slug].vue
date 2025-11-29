@@ -70,6 +70,10 @@ const { getImageUrl } = useStrapiImage();
               <div class="rounded-xl overflow-hidden bg-gray-100">
                 <NuxtImg
                   v-if="hike.cover?.url"
+                  format="webp"
+                  preload
+                  loading="eager"
+                  fetch-priority="high"
                   :src="getImageUrl(hike.cover.url)"
                   :alt="hike.cover.alternativeText || hike.title"
                   class="w-full h-full object-cover max-h-[500px]"

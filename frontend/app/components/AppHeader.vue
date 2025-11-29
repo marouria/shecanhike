@@ -29,8 +29,12 @@ const items = computed<NavigationMenuItem[]>(() => [
     <template #title>
       <NuxtImg
         src="/img/logo.png"
+        format="webp"
+        preload
+        loading="eager"
+        fetch-priority="high"
         alt="Hiking trail in mountains"
-        class="max-h-[50px]"
+        height="50"
       />
     </template>
 

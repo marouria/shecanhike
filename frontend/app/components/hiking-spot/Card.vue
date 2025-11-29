@@ -18,8 +18,12 @@ const { getImageUrl } = useStrapiImage();
         <NuxtImg
           v-if="hikingSpot.cover?.url"
           :src="getImageUrl(hikingSpot.cover?.url)"
+          format="webp"
+          loading="lazy"
+          fetch-priority="low"
           :alt="hikingSpot.title"
-          class="object-cover w-full h-full"
+          class="object-cover"
+          width="750"
         />
       </div>
     </template>

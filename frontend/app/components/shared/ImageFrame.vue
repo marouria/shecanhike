@@ -9,6 +9,9 @@ const props = defineProps<{
   >
     <NuxtImg
       :src="imageUrl"
+      format="webp"
+      loading="lazy"
+      fetch-priority="low"
       alt="Hiking trail in mountains"
       class="w-full h-full object-cover"
     />

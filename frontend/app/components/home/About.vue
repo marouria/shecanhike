@@ -6,7 +6,7 @@
       <div class="flex flex-col gap-8">
         <div>
           <SharedNavigationButton
-            url="/about"
+            page="about"
             label="About shecanhike"
             variant="outline"
           />

@@ -2,7 +2,7 @@
 const { locale } = useI18n();
 
 interface Props {
-  url: string;
+  page?: string;
   label: string;
   variant?: "outline" | "default";
 }
@@ -21,7 +21,7 @@ const classes = {
 <template>
   <NuxtLink
     :class="`py-3 px-6 rounded transition-all duration-200 ${classes[variant]}`"
-    :to="`/${locale}/${url}`"
+    :to="`/${locale}/${page}`"
   >
     {{ label }}</NuxtLink
   >

@@ -12,7 +12,6 @@
       <div class="flex flex-col gap-8">
         <div>
           <SharedNavigationButton
-            url="/"
             label="Join the community"
             variant="outline"
           />

@@ -39,6 +39,9 @@
           </div>
           <NuxtImg
             src="/img/hero-grid.jpg"
+            format="webp"
+            loading="lazy"
+            fetch-priority="low"
             alt="Hiker portrait"
             class="w-full aspect-square object-cover rounded-xl max-w-full md:max-w-[300px]"
           />

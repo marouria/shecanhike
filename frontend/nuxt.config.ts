@@ -24,6 +24,17 @@ export default defineNuxtConfig({
     prefix: "/api",
     version: "v5",
   },
+  image: {
+    providers: {
+      strapi: {
+        name: "strapi",
+        provider: "~/providers/strapi",
+        options: {
+          baseURL: process.env.STRAPI_URL || "https://shecanhike-production.up.railway.app",
+        },
+      },
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

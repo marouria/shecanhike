@@ -11,8 +11,6 @@ await articleStore.fetchArticleById(articleId.value);
 const article = computed(() => articleStore.article);
 const loading = computed(() => articleStore.loading);
 const error = computed(() => articleStore.error);
-
-const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
@@ -41,8 +39,9 @@ const { getImageUrl } = useStrapiImage();
             >
               <NuxtImg
                 v-if="article.cover?.url"
+                :src="article.cover.url"
+                provider="strapi"
                 format="webp"
-                :src="getImageUrl(article.cover?.url)"
                 :alt="article.title"
                 class="object-cover w-full h-full"
               />

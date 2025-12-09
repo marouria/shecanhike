@@ -13,8 +13,6 @@ const active = ref("0");
 const hike = computed(() => hikingSpotStore.hikingSpot);
 const loading = computed(() => hikingSpotStore.loading);
 const error = computed(() => hikingSpotStore.error);
-
-const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
@@ -70,11 +68,12 @@ const { getImageUrl } = useStrapiImage();
               <div class="rounded-xl overflow-hidden bg-gray-100">
                 <NuxtImg
                   v-if="hike.cover?.url"
+                  :src="hike.cover.url"
+                  provider="strapi"
                   format="webp"
                   preload
                   loading="eager"
                   fetch-priority="high"
-                  :src="getImageUrl(hike.cover.url)"
                   :alt="hike.cover.alternativeText || hike.title"
                   class="w-full h-full object-cover max-h-[500px]"
                 />

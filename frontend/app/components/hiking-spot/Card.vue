@@ -5,8 +5,6 @@ const { locale } = useI18n();
 defineProps<{
   hikingSpot: HikingSpot;
 }>();
-
-const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
@@ -17,7 +15,8 @@ const { getImageUrl } = useStrapiImage();
       >
         <NuxtImg
           v-if="hikingSpot.cover?.url"
-          :src="getImageUrl(hikingSpot.cover?.url)"
+          :src="hikingSpot.cover.url"
+          provider="strapi"
           format="webp"
           loading="lazy"
           fetch-priority="low"

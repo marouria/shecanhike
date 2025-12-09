@@ -7,8 +7,6 @@ const articleStore = useHikingSpotStore();
 await articleStore.fetchHikingSpots();
 
 const hikingSpots = articleStore.hikingSpots;
-
-const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>
@@ -36,10 +34,11 @@ const { getImageUrl } = useStrapiImage();
           <div class="w-full aspect-[3/4] rounded-3xl overflow-hidden">
             <NuxtImg
               v-if="hike.cover?.url"
+              :src="hike.cover.url"
+              provider="strapi"
               format="webp"
               loading="lazy"
               fetch-priority="low"
-              :src="getImageUrl(hike.cover?.url)"
               :alt="hike.title"
               class="w-full h-full object-cover"
             />

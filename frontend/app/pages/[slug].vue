@@ -43,7 +43,9 @@ const error = computed(() => hikingSpotStore.error);
             :headline="`${useCapitalize(hike.location)}, ${useCapitalize(
               hike.country
             )}`"
-            :ui="{ container: 'sm:gap-y-4 sm:py-10 lg:pt-20 lg:pb-0' }"
+            :ui="{
+              container: 'sm:gap-y-4 sm:py-10 pb-4 sm:pb-6 lg:pt-20 lg:pb-8',
+            }"
             class="m-0"
           >
             <template #body>
@@ -80,7 +82,9 @@ const error = computed(() => hikingSpotStore.error);
               </div>
             </template>
           </UPageHero>
-          <UPageSection :ui="{ container: 'sm:py-10 lg:py-10 m-0' }">
+          <UPageSection
+            :ui="{ root: 'mb-4', container: 'py-4 sm:py-6 lg:py-6' }"
+          >
             <UAccordion
               :items="hike.itineraries"
               v-model="active"
@@ -91,21 +95,21 @@ const error = computed(() => hikingSpotStore.error);
             >
               <template #leading="{ item, index }">
                 <span
-                  class="text-base md:text-lg font-normal whitespace-nowrap h-full"
+                  class="text-base md:text-lg font-normal whitespace-nowrap h-full underline"
                   >Itinerary #{{ index + 1 }}</span
                 >
-                <p class="text-base font-bold md:text-lg text-start">
+                <p class="text-base md:text-lg text-start">
                   {{ item.title }}
                 </p>
               </template>
               <template #body="{ item }">
                 <ItineraryData :itinerary="item" />
-                <p class="py-10">{{ item.description }}</p>
+                <p class="pt-10">{{ item.description }}</p>
               </template>
             </UAccordion>
-            <div>
-              <MDC :value="hike.content || ''" />
-            </div>
+          </UPageSection>
+          <UPageSection :ui="{ container: 'py-4 sm:py-6 lg:py-6' }">
+            <MDC :value="hike.content || ''" />
           </UPageSection>
         </template>
       </UPageBody>

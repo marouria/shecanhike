@@ -56,7 +56,7 @@ const hikingSpots = articleStore.hikingSpots;
                 {{ hike.title }}
               </NuxtLink>
             </h3>
-            <p class="text-sm leading-normal m-0">
+            <p class="text-sm leading-normal m-0 text-ellipsis line-clamp-3">
               {{ hike.excerpt }}
             </p>
           </div>

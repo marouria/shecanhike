@@ -46,6 +46,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  mdc: {
+    headings: {
+      anchorLinks: false,
+    },
+  },
   app: {
     head: {
       title: "Women's Hiking Community & Trail Guides",

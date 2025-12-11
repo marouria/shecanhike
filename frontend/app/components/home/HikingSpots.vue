@@ -48,7 +48,7 @@ const hikingSpots = articleStore.hikingSpots;
               {{ useCapitalize(hike.location) }},
               {{ useCapitalize(hike.country) }}
             </p>
-            <h3 class="line-clamp-2 text-2xl font-bold m-0">
+            <h3 class="truncate text-2xl font-bold m-0 self-start">
               <NuxtLink
                 :to="`/${locale}/${hike.slug}`"
                 class="after:absolute after:inset-0 after:z-[1]"

@@ -7,8 +7,6 @@ await hikingSpotStore.fetchHikingSpots();
 const hikingSpots = hikingSpotStore.hikingSpots;
 const loading = computed(() => hikingSpotStore.loading);
 const error = computed(() => hikingSpotStore.error);
-
-const { getImageUrl } = useStrapiImage();
 </script>
 
 <template>

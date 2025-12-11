@@ -30,7 +30,7 @@ export default defineNuxtConfig({
         name: "strapi",
         provider: "~/providers/strapi",
         options: {
-          baseURL: process.env.STRAPI_URL || "https://shecanhike-production.up.railway.app",
+          baseURL: process.env.PROXY_BASE_URL || "https://media.shecanhike.com",
         },
       },
     },

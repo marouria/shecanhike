@@ -30,7 +30,6 @@ const items = computed<NavigationMenuItem[]>(() => [
       <NuxtImg
         src="/img/logo.png"
         format="webp"
-        preload
         loading="eager"
         fetch-priority="high"
         alt="Hiking trail in mountains"

@@ -5,7 +5,6 @@
         <NuxtImg
           src="/img/hero-main.jpg"
           format="webp"
-          preload
           loading="eager"
           fetch-priority="high"
           alt="Hiking trail in mountains"

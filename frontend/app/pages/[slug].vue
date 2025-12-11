@@ -73,7 +73,6 @@ const error = computed(() => hikingSpotStore.error);
                   :src="hike.cover.url"
                   provider="strapi"
                   format="webp"
-                  preload
                   loading="eager"
                   fetch-priority="high"
                   :alt="hike.cover.alternativeText || hike.title"

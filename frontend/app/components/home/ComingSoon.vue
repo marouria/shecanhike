@@ -124,8 +124,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
             <UButton type="submit" class="text-white"> Submit </UButton>
           </UForm>
-
-          <Placeholder class="h-48" />
         </template>
       </UModal>
     </div>

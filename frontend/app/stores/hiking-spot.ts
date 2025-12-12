@@ -8,6 +8,7 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
   const hikingSpot = ref<HikingSpot | null>();
   const loading = ref(false);
   const error = ref<Error | null>(null);
+  const { locale } = useI18n();
 
   const fetchHikingSpots = async () => {
     loading.value = true;
@@ -16,6 +17,7 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
       const { data } = await find<HikingSpot>("hiking-spots", {
         fields: ["title", "slug", "excerpt", "location", "country"],
         populate: ["cover"],
+        locale: locale.value,
       });
       hikingSpots.value = data || [];
     } catch (e) {

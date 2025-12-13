@@ -40,7 +40,6 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
     }
 
     try {
-      const { find } = useStrapi();
       const { data } = await find<HikingSpot>("hiking-spots", {
         filters: {
           slug: {
@@ -48,6 +47,7 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
           },
         },
         populate: "*",
+        locale: locale.value,
       });
       hikingSpot.value = data?.[0] || null;
     } catch (e) {

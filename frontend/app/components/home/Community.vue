@@ -17,6 +17,8 @@ const { t } = useI18n();
         <div>
           <SharedNavigationButton
             :label="t('home.community.button')"
+            to="https://www.instagram.com/shecanhike/"
+            target="_blank"
             variant="outline"
             page=""
           />

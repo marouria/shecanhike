@@ -71,7 +71,8 @@ const items = computed<NavigationMenuItem[]>(() => [
         color="primary"
         trailing-icon="i-lucide-arrow-right"
         class="hidden lg:flex text-white hover:bg-brand-300"
-        @click=""
+        to="https://www.instagram.com/shecanhike/"
+        target="_blank"
       />
     </template>
 

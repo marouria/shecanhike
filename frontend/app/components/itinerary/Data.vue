@@ -26,14 +26,14 @@ const itineraryStats = computed(() => [
   {
     key: "difficulty",
     icon: "i-heroicons-map",
-    label: "Difficulty",
+    label: $t("hiking_spot.difficulty"),
     value: props.itinerary.difficulty,
     show: !!props.itinerary.difficulty,
   },
   {
     key: "distance",
     icon: "i-heroicons-map",
-    label: "Distance",
+    label: $t("hiking_spot.distance"),
     value: props.itinerary.distance_km
       ? `${props.itinerary.distance_km} km`
       : null,
@@ -42,14 +42,14 @@ const itineraryStats = computed(() => [
   {
     key: "duration",
     icon: "i-heroicons-clock",
-    label: "Duration",
+    label: $t("hiking_spot.duration"),
     value: formatDuration.value,
     show: !!formatDuration.value,
   },
   {
     key: "elevation_gain",
     icon: "i-heroicons-arrow-trending-up",
-    label: "Elevation Gain",
+    label: $t("hiking_spot.elevation_gain"),
     value: props.itinerary.elevation_gain
       ? `${props.itinerary.elevation_gain} m`
       : null,
@@ -58,7 +58,7 @@ const itineraryStats = computed(() => [
   {
     key: "elevation_loss",
     icon: "i-heroicons-arrow-trending-down",
-    label: "Elevation Loss",
+    label: $t("hiking_spot.elevation_loss"),
     value: props.itinerary.elevation_loss
       ? `${props.itinerary.elevation_loss} m`
       : null,
@@ -67,7 +67,7 @@ const itineraryStats = computed(() => [
   {
     key: "trail_type",
     icon: "i-lucide-route",
-    label: "Trail type",
+    label: $t("hiking_spot.trail_type"),
     value: props.itinerary.trail_type
       ? formatTrailType(props.itinerary.trail_type)
       : null,
@@ -79,19 +79,19 @@ const amenities = computed(() => [
   {
     key: "accomodation",
     icon: "i-lucide-house",
-    label: "Mountain hut",
+    label: $t("hiking_spot.mountain_hut"),
     available: props.itinerary.accomodation,
   },
   {
     key: "camping",
     icon: "i-lucide-tent",
-    label: "Camping",
+    label: $t("hiking_spot.camping"),
     available: props.itinerary.camping,
   },
   {
     key: "public_transportation",
     icon: "i-lucide-bus",
-    label: "Public transportation",
+    label: $t("hiking_spot.public_transportation"),
     available: props.itinerary.public_transportation,
   },
 ]);
@@ -135,7 +135,9 @@ const amenities = computed(() => [
         <div class="flex items-center gap-3">
           <UIcon name="i-lucide-map-pin" class="text-2xl text-primary" />
           <div>
-            <p class="text-sm text-gray-500">Starting Trailhead</p>
+            <p class="text-sm text-gray-500">
+              {{ $t("hiking_spot.starting_trailhead") }}
+            </p>
             <a
               :href="itinerary.trailhead_start"
               target="_blank"
@@ -143,7 +145,7 @@ const amenities = computed(() => [
               class="inline-flex items-center gap-1 text-sm hover:underline"
             >
               <UIcon name="i-lucide-external-link" class="text-xs" />
-              Open in Maps
+              {{ $t("hiking_spot.open_maps") }}
             </a>
           </div>
         </div>
@@ -153,7 +155,9 @@ const amenities = computed(() => [
         <div class="flex items-center gap-3">
           <UIcon name="i-lucide-map-pin" class="text-2xl text-primary" />
           <div>
-            <p class="text-sm text-gray-500">Ending Trailhead</p>
+            <p class="text-sm text-gray-500">
+              {{ $t("hiking_spot.ending_trailhead") }}
+            </p>
             <a
               :href="itinerary.trailhead_end"
               target="_blank"
@@ -161,7 +165,7 @@ const amenities = computed(() => [
               class="inline-flex items-center gap-1 text-sm hover:underline"
             >
               <UIcon name="i-lucide-external-link" class="text-xs" />
-              Open in Maps
+              {{ $t("hiking_spot.open_maps") }}
             </a>
           </div>
         </div>

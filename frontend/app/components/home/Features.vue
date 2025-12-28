@@ -6,33 +6,30 @@
       <div class="flex flex-col gap-6 text-center">
         <span class="text-base font-normal">01</span>
         <h3 class="text-2xl md:text-[1.75rem] font-bold m-0 lowercase">
-          hiking E-guides
+          {{ $t("home.features.guide.title") }}
         </h3>
         <p class="text-base leading-relaxed m-0">
-          Self-guided routes enriched with local culture, history, and
-          nature—designed to help you explore with depth and confidence.
+          {{ $t("home.features.guide.description") }}
         </p>
       </div>
 
       <div class="flex flex-col gap-6 text-center">
         <span class="text-base font-normal">02</span>
         <h3 class="text-2xl md:text-[1.75rem] font-bold m-0 lowercase">
-          women's community
+          {{ $t("home.features.community.title") }}
         </h3>
         <p class="text-base leading-relaxed m-0">
-          Supportive space for women who hike—share tips, stories, and
-          encouragement with like-minded adventurers.
+          {{ $t("home.features.community.description") }}
         </p>
       </div>
 
       <div class="flex flex-col gap-6 text-center">
         <span class="text-base font-normal">03</span>
         <h3 class="text-2xl md:text-[1.75rem] font-bold m-0 lowercase">
-          group getaways
+          {{ $t("home.features.group.title") }}
         </h3>
         <p class="text-base leading-relaxed m-0">
-          Immersive hiking journeys in handpicked destinations, guided by the
-          spirit of exploration and community.
+          {{ $t("home.features.group.description") }}
         </p>
       </div>
     </div>

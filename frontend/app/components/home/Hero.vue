@@ -14,8 +14,7 @@
       </div>
       <div class="flex flex-col gap-12">
         <h1 class="text-5xl md:text-[3rem] font-bold leading-tight m-0">
-          Explore safely the outdoors where nature meets culture with other
-          women
+          {{ $t("home.hero") }}
         </h1>
         <div
           class="flex flex-col md:flex-row gap-8 items-start justify-between"

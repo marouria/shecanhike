@@ -7,27 +7,27 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const { formatTrailType, formatSeason } = useHikingSpotLabels();
+const { formatSeason } = useHikingSpotLabels();
 
 const hikingStats = computed(() => [
   {
     key: "best_season",
     icon: "i-lucide-sun",
-    label: "Best season",
+    label: $t("hiking_spot.best_season"),
     value: props.hike.best_season ? formatSeason(props.hike.best_season) : null,
     show: !!props.hike.best_season,
   },
   {
     key: "altitude_max",
     icon: "i-heroicons-arrow-up",
-    label: "Max Altitude",
+    label: $t("hiking_spot.altitude_max"),
     value: props.hike.altitude_max ? `${props.hike.altitude_max} m` : null,
     show: !!props.hike.altitude_max,
   },
   {
     key: "altitude_min",
     icon: "i-heroicons-arrow-down",
-    label: "Min Altitude",
+    label: $t("hiking_spot.altitude_min"),
     value: props.hike.altitude_min ? `${props.hike.altitude_min} m` : null,
     show: !!props.hike.altitude_min,
   },

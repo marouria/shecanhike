@@ -1,0 +1,77 @@
+{
+  "menu": {
+    "hikes": "Randonnées",
+    "about": "À propos",
+    "hygiene_rituals": "Rituels d'hygiène"
+  },
+  "home": {
+    "hero": "Parcourez les sentiers pour vous reconnecter à vous-même, en toute sécurité, entre femmes.",
+    "features": {
+      "guide": {
+        "title": "E-guides de randonnée",
+        "description": "Itinéraires en autonomie enrichis de culture locale, d'histoire et de nature—conçus pour vous aider à explorer en profondeur et en toute confiance."
+      },
+      "community": {
+        "title": "Communauté de femmes",
+        "description": "Un espace de soutien pour les femmes qui font de la randonnée—partagez conseils, histoires et encouragements avec d'autres aventurières."
+      },
+      "group": {
+        "title": "Séjours en groupe",
+        "description": "Expériences de randonnée immersives dans des destinations soigneusement choisies, guidées par l'esprit d'exploration et de communauté."
+      }
+    },
+    "about": {
+      "button": "À propos de shecanhike",
+      "title": "Partons explorer le monde à travers la randonnée",
+      "description": "Shecanhike est un projet né de la passion pour la randonnée, la culture et la beauté sauvage de notre planète. C'est une célébration de la curiosité et de la force des femmes sur les sentiers, où chaque pas nous relie à l'histoire, aux paysages et à nous-mêmes.\n\nQue ce soit près de chez soi ou en voyage, shecanhike encourage les femmes à explorer leur environnement à travers la randonnée. Nous croyons que la meilleure façon de comprendre un lieu—sa culture, ses histoires, ses habitants et son esprit—est d'en parcourir les sentiers."
+    },
+    "community": {
+      "button": "Rejoindre la communauté",
+      "title": "Pourquoi rejoindre notre communauté de randonnée",
+      "description": "Shecanhike est plus qu’un projet de randonnée—c’est une communauté fondée sur la sororité, le soutien et l’aventure partagée.\n\nQue vous exploriez des sentiers près de chez vous ou que vous randonniez dans des paysages inconnus en voyage, vous ne marchez jamais vraiment seule. Cet espace est là pour connecter les femmes qui randonneront ensemble, offrant encouragement, histoires authentiques et conseils fiables pour se sentir confiantes et en sécurité sur les sentiers.\n\nDans un monde où l’exploration en solo peut sembler intimidante, shecanhike encourage la marche ensemble—s’élevant mutuellement, célébrant nos parcours et créant un réseau où chaque pas est soutenu."
+    },
+    "coming_soon": {
+      "title": "Quelque chose de nouveau arrive...",
+      "description": "Nous travaillons sur une application mobile pour apporter l’expérience She Can Hike directement dans votre poche—conçue pour vous aider à explorer le côté culturel de la randonnée comme jamais auparavant.",
+      "question": "Vous voulez être les premiers informés ?",
+      "button": "Me tenir au courant"
+    },
+    "hikes": {
+      "button": "Découvrez nos randonnées",
+      "description": "Découvrez les derniers itinéraires de la communauté shecanhike dans le monde, alliant nature et culture."
+    }
+  },
+  "hiking_spots": {
+    "title": "Toutes les randonnées",
+    "subtitle": "Asie"
+  },
+  "hiking_spot": {
+    "best_season": "Meilleure saison",
+    "altitude_max": "Altitude maximale",
+    "altitude_min": "Altitude minimale",
+    "difficulty": "Difficulté",
+    "distance": "Distance",
+    "duration": "Durée",
+    "elevation_gain": "Dénivelé positif",
+    "elevation_loss": "Dénivelé négatif",
+    "trail_type": "Type de sentier",
+    "mountain_hut": "Refuge de montagne",
+    "camping": "Camping",
+    "public_transportation": "Transports en commun",
+    "starting_trailhead": "Point de départ",
+    "ending_trailhead": "Point d’arrivée",
+    "open_maps": "Ouvrir dans Maps",
+    "itinerary": "Itinéraire #"
+  },
+  "about": {
+    "title": "Qui est derrière SheCanHike ?",
+    "subtitle": "En apprendre plus sur nous",
+    "description": "Bonjour, je suis Marie. J'ai créé She Can Hike pour rassembler les femmes à travers la randonnée. Je voulais rencontrer d'autres femmes qui aiment être en plein air, partager des moments de simplicité et de connexion.\n\nLa randonnée m'aide à vider mon esprit et à apaiser mon anxiété. Je suis quelqu'un qui a tendance à trop réfléchir, à m'inquiéter pour l'avenir et à douter de moi constamment. Mais lorsque je suis sur les sentiers, toutes ces pensées se calment. Je me sens confiante — comme si j'étais exactement là où je devais être. Le rythme de mes pas, le son du vent, l'odeur de la forêt… tout cela me ramène au moment présent.\n\nJe ne suis pas très douée pour m'exprimer avec des mots, donc la randonnée est devenue une sorte de thérapie pour moi — mon exutoire au stress, ma source d'inspiration, un rappel que tout n'est pas perdu, et que la nature elle-même est puissante malgré la petitesse de notre existence.\n\nVoyager est une autre grande passion. Au fil des ans, j'ai vécu dans six pays différents. J'ai appris que la meilleure façon de comprendre un lieu est souvent de le parcourir à pied — emprunter les petits chemins, visiter les villages reculés et rencontrer des personnes dont les traditions sont restées vivantes pendant des générations. La randonnée permet exactement cela.\n\nJ'apprécie les villes pour leur aspect social, mais je peux vite me sentir dépassée par la rapidité avec laquelle tout bouge. J'ai l'impression d'être toujours quelques pas derrière. Quand je randonne, tout cela disparaît. Il n'y a ni précipitation, ni comparaison, ni bruit. C'est l'un des rares moments où je vis vraiment le présent.\n\nC'est exactement ce que représente She Can Hike — ralentir, se connecter avec la nature et se rappeler à quel point nous sommes fortes et capables. J'espère que cette communauté aidera chacune à grandir, à se soutenir mutuellement et à trouver du réconfort en sachant que nous ne parcourons pas ce chemin seules."
+  },
+  "hygiene_rituals": {
+    "title": "Restez fraîche, partout, sans eau 🌿",
+    "subtitle": "Rituels d'hygiène pour femmes nomades",
+    "content": "Vous n'avez pas toujours accès à une douche en vadrouille ? Vous en avez marre d'utiliser des lingettes pour bébé qui finiront à la poubelle ? Shecanhike veut développer un rituel de nettoyage sans rinçage, pensée pour le corps et adaptée aux femmes qui bougent, pour se sentir fraîche et propre en toutes circonstances.\n\n## Pourquoi vous allez adorer\n\n- 🚿 Sans eau, sans rinçage – Utilisable partout\n- 🌸 Respectueuse du corps féminin\n- 🚫 Alternative aux lingettes jetables\n- ♻️ Une démarche plus responsable\n\n## Pour qui ?\n\n- ✨ Femmes qui voyagent léger\n- 🥾 Randonneuses et campeuses\n- 🚐 Vanlife & minimalisme\n- 💪 Sportives en déplacement\n\n## 🎉 Nous avons besoin de vous !\n\nVos retours, vos expériences et vos idées sont essentiels pour faire grandir cette gamme d'hygiène outdoor. En vous inscrivant, vous soutenez le projet et contribuez à créer une solution vraiment utile pour notre communauté.",
+    "button": "👉 Je veux être informée"
+  }
+}

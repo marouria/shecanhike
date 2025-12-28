@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useI18n();
+</script>
+
 <template>
   <UContainer as="section" class="py-24">
     <div
@@ -12,30 +16,19 @@
       <div class="flex flex-col gap-8">
         <div>
           <SharedNavigationButton
-            label="Join the community"
+            :label="t('home.community.button')"
             variant="outline"
+            page=""
           />
         </div>
         <h2 class="text-4xl md:text-[2.5rem] font-bold leading-tight m-0">
-          Why you should join shecanhike community for hiking
+          {{ t("home.community.title") }}
         </h2>
         <div class="flex flex-col gap-6">
-          <p class="text-base leading-relaxed m-0">
-            Shecanhike is more than a hiking project—it's a community built on
-            sisterhood, support, and shared adventure.
-          </p>
-          <p class="text-base leading-relaxed m-0">
-            Whether you're exploring trails close to home or hiking through
-            unfamiliar landscapes while traveling, you're never truly walking
-            alone. This space is here to connect women who hike, offering
-            encouragement, real stories, and trusted advice to help each other
-            feel confident and safe on the trail.
-          </p>
-          <p class="text-base leading-relaxed m-0">
-            In a world where solo exploration can feel daunting, shecanhike is
-            about walking together—lifting each other up, celebrating our
-            journeys, and creating a network where every step is supported.
-          </p>
+          <MDC
+            :value="t('home.community.description')"
+            class="text-base leading-relaxed m-0"
+          />
         </div>
       </div>
     </div>

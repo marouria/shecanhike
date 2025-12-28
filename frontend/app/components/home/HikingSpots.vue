@@ -2,6 +2,7 @@
 import { useHikingSpotStore } from "~/stores/hiking-spot";
 
 const { locale } = useI18n();
+const { t } = useI18n();
 
 const articleStore = useHikingSpotStore();
 await articleStore.fetchHikingSpots();
@@ -15,13 +16,12 @@ const hikingSpots = articleStore.hikingSpots;
       <div class="flex flex-col items-center gap-6 mb-12">
         <SharedNavigationButton
           page="hiking-spots"
-          label="Discover our hikes"
+          :label="t('home.hikes.button')"
           variant="outline"
         />
 
         <p class="text-center max-w-[700px] text-base leading-relaxed m-0">
-          Find out the latest itineraries of shecanhike community around the
-          world that blend nature and culture together
+          {{ $t("home.hikes.description") }}
         </p>
       </div>
 

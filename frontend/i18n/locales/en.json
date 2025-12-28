@@ -1,0 +1,77 @@
+{
+  "menu": {
+    "hikes": "Hikes",
+    "about": "About us",
+    "hygiene_rituals": "Hygiene rituals"
+  },
+  "home": {
+    "hero": "Explore the outdoors safely, connect with yourself and meet other women.",
+    "features": {
+      "guide": {
+        "title": "hiking E-guides",
+        "description": "Self-guided routes enriched with local culture, history, and nature—designed to help you explore with depth and confidence."
+      },
+      "community": {
+        "title": "women's community",
+        "description": "Supportive space for women who hike—share tips, stories, and encouragement with like-minded adventurers."
+      },
+      "group": {
+        "title": "group getaways",
+        "description": "Immersive hiking journeys in handpicked destinations, guided by the spirit of exploration and community."
+      }
+    },
+    "about": {
+      "button": "About shecanhike",
+      "title": "Let's go out and explore the world with hiking",
+      "description": "Shecanhike is a project born from a passion for hiking, culture, and the wild beauty of our planet. It's a celebration of women's curiosity and strength on the trailwhere every step connects us to history, landscapes, and ourselves.\n\nWhether close to home or while traveling, shecanhike encourages women to explore their surroundings through hiking. We believe that the best way to understand a placeits culture, stories, people and spiritis by walking through it."
+    },
+    "community": {
+      "button": "Join the community",
+      "title": "Why you should join our community for hiking",
+      "description": "Shecanhike is more than a hiking project—it's a community built on sisterhood, support, and shared adventure.\n\nWhether you're exploring trails close to home or hiking through unfamiliar landscapes while traveling, you're never truly walking alone. This space is here to connect women who hike, offering encouragement, real stories, and trusted advice to help each other feel confident and safe on the trail.\n\nIn a world where solo exploration can feel daunting, shecanhike is about walking together—lifting each other up, celebrating our journeys, and creating a network where every step is supported."
+    },
+    "coming_soon": {
+      "title": "Something New is Coming...",
+      "description": "We're working on a mobile app to bring the She Can Hike experience right to your pocket—designed to help you explore the cultural side of hiking like never before.",
+      "question": "Want to be the first to know ?",
+      "button": "Stay tuned !"
+    },
+    "hikes": {
+      "button": "Discover our hikes",
+      "description": "Find out the latest itineraries of shecanhike community around the world that blend nature and culture together"
+    }
+  },
+  "hiking_spots": {
+    "title": "All hikes",
+    "subtitle": "Asia"
+  },
+  "hiking_spot": {
+    "best_season": "Best season",
+    "altitude_max": "Max Altitude",
+    "altitude_min": "Min Altitude",
+    "difficulty": "Difficulty",
+    "distance": "Distance",
+    "duration": "Duration",
+    "elevation_gain": "Elevation gain",
+    "elevation_loss": "Elevation loss",
+    "trail_type": "Trail type",
+    "mountain_hut": "Mountain Hut",
+    "camping": "camping",
+    "public_transportation": "Public transportation",
+    "starting_trailhead": "Starting Trailhead",
+    "ending_trailhead": "Ending Trailhead",
+    "open_maps": "Open in Maps",
+    "itinerary": "Itinerary #"
+  },
+  "about": {
+    "title": "Who is behind SheCanHike ?",
+    "subtitle": "Learn more about us",
+    "description": "Hi, I’m Marie. I created She Can Hike to bring women together through hiking. I wanted to meet other women who love being outdoors, to share moments of simplicity and connection.\n\nHiking helps me clear my mind and ease my anxiety. I’m someone who tends to overthink, worry about the future, and doubt myself constantly. But when I’m out on the trail, all those thoughts quiet down. I feel confident — like I’m exactly where I’m meant to be. The rhythm of my steps, the sound of the wind, the smell of the forest… it all brings me back to the present moment.\n\nI'm not great at expressing myself with words, so hiking has become its own kind of therapy for me — my stress relief, my source of inspiration, a reminder that not everything is lost, and that nature itself is powerful despite how small our existence can feel.\n\nTraveling is another big passion of mine. Over the years, I’ve lived in six different countries. I’ve learned that the best way to understand a place is often to walk through it — to take the small paths, visit the remote villages, and meet people whose traditions have stayed alive for generations. Hiking lets you do exactly that.\n\nI do enjoy cities for their social side, but I can quickly feel overwhelmed by how fast everything moves. I feel like I’m always a few steps behind. When I’m hiking, all of that fades away. There’s no rush, no comparison, no noise. It’s one of the rare moments when I truly live in the present.\n\nThat’s what She Can Hike is all about — slowing down, connecting with nature, and reminding ourselves of how strong and capable we truly are. I do hope this community will help each other grow, lift one another up, and find comfort in knowing we’re not walking this journey alone."
+  },
+  "hygiene_rituals": {
+    "title": "Feel fresh wherever the trail takes you 🌿",
+    "subtitle": "Outdoor hygiene rituals for women",
+    "content": "Don’t always have access to a shower while you’re on the go? Tired of using disposable baby wipes that end up in the trash? Shecanhike aims to develop a rinse-free cleansing ritual, designed for the body and adapted to women on the move, to help you feel fresh and clean in any situation.\n\n## Why you’ll love it\n\n- 🚿 No water, no rinsing – usable anywhere\n- 🌸 Gentle and respectful of the female body\n- 🚫 An alternative to disposable wipes\n- ♻️ A more responsible approach\n\n## Who is it for?\n\n- ✨ Women who travel light\n- 🥾 Hikers and campers\n- 🚐 Vanlife & minimalism lovers\n- 💪 Active women on the go\n\n## 🎉 We need you!\n\nYour feedback, experiences, and ideas are essential to help this outdoor hygiene range grow. By signing up, you support the project and contribute to creating a solution that is truly useful for our community.",
+    "button": "👉 Keep me updated"
+  }
+}

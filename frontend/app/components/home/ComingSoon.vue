@@ -2,6 +2,8 @@
 import { z } from "zod";
 import type { FormSubmitEvent } from "@nuxt/ui";
 
+const { t } = useI18n();
+
 const open = ref(false);
 const email = ref("");
 const toast = useToast();
@@ -72,26 +74,26 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       <h2
         class="text-2xl md:text-[3rem] font-bold text-white m-0 leading-tight"
       >
-        Something New is Coming...
+        {{ $t("home.coming_soon.title") }}
       </h2>
 
       <p
         class="text-base md:text-lg leading-relaxed text-white m-0 max-w-[650px]"
       >
-        We're working on a mobile app to bring the She Can Hike experience right
-        to your pocket—designed to help you explore the cultural side of hiking
-        like never before.
+        {{ $t("home.coming_soon.description") }}
       </p>
 
-      <p class="text-base text-white m-0">Want to be the first to know?</p>
+      <p class="text-base text-white m-0">
+        {{ $t("home.coming_soon.question") }}
+      </p>
       <UModal
         v-model:open="open"
-        title="Stay tuned !"
+        :title="t('home.coming_soon.button')"
         :ui="{ footer: 'justify-end' }"
       >
         <UButton
           size="xl"
-          label="Keep me posted"
+          :label="$t('home.coming_soon.button')"
           color="neutral"
           variant="outline"
         />

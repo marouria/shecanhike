@@ -1,17 +1,26 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
+const { locales, setLocale } = useI18n();
+
 const { locale } = useI18n();
 
 const route = useRoute();
 
+const test = locale;
+
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: "Hikes",
+    label: $t("menu.hikes"),
     to: `/${locale.value}/hiking-spots`,
     active: route.path.startsWith(`/${locale.value}/hiking-spots`),
   },
   {
-    label: "About",
+    label: $t("menu.hygiene_rituals"),
+    to: `/${locale.value}/hygiene-rituals`,
+    active: route.path.startsWith(`/${locale.value}/hygiene-rituals`),
+  },
+  {
+    label: $t("menu.about"),
     to: `/${locale.value}/about`,
     active: route.path.startsWith(`/${locale.value}/about`),
   },
@@ -49,6 +58,13 @@ const items = computed<NavigationMenuItem[]>(() => [
     </template>
 
     <template #right>
+      <UButton
+        v-for="locale in locales"
+        @click="setLocale(locale.code)"
+        variant="ghost"
+      >
+        {{ locale.name }}
+      </UButton>
       <UButton
         size="xl"
         label="Join the community"

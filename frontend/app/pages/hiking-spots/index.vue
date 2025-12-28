@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useHikingSpotStore } from "~/stores/hiking-spot";
 
+const { t } = useI18n();
+
 const hikingSpotStore = useHikingSpotStore();
 await hikingSpotStore.fetchHikingSpots();
 
@@ -12,7 +14,10 @@ const error = computed(() => hikingSpotStore.error);
 <template>
   <UPage>
     <UContainer as="section" class="py-24">
-      <UPageHeader title="All hikes" headline="Asia" />
+      <UPageHeader
+        :title="t('hiking_spots.title')"
+        :headline="t('hiking_spots.subtitle')"
+      />
 
       <UPageColumns>
         <template v-for="(hike, index) in hikingSpots">

@@ -95,7 +95,8 @@ const error = computed(() => hikingSpotStore.error);
               <template #leading="{ item, index }">
                 <span
                   class="text-base md:text-lg font-normal whitespace-nowrap h-full underline"
-                  >Itinerary #{{ index + 1 }}</span
+                >
+                  {{ $t("hiking_spot.itinerary") }}{{ index + 1 }}</span
                 >
                 <p class="text-base md:text-lg text-start">
                   {{ item.title }}

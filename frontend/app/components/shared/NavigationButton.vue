@@ -2,7 +2,7 @@
 const { locale } = useI18n();
 
 interface Props {
-  page?: string;
+  page: string;
   label: string;
   variant?: "outline" | "default";
 }

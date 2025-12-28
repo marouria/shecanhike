@@ -31,10 +31,9 @@
       "description": "Shecanhike est plus qu’un projet de randonnée—c’est une communauté fondée sur la sororité, le soutien et l’aventure partagée.\n\nQue vous exploriez des sentiers près de chez vous ou que vous randonniez dans des paysages inconnus en voyage, vous ne marchez jamais vraiment seule. Cet espace est là pour connecter les femmes qui randonneront ensemble, offrant encouragement, histoires authentiques et conseils fiables pour se sentir confiantes et en sécurité sur les sentiers.\n\nDans un monde où l’exploration en solo peut sembler intimidante, shecanhike encourage la marche ensemble—s’élevant mutuellement, célébrant nos parcours et créant un réseau où chaque pas est soutenu."
     },
     "coming_soon": {
-      "title": "Quelque chose de nouveau arrive...",
-      "description": "Nous travaillons sur une application mobile pour apporter l’expérience She Can Hike directement dans votre poche—conçue pour vous aider à explorer le côté culturel de la randonnée comme jamais auparavant.",
-      "question": "Vous voulez être les premiers informés ?",
-      "button": "Me tenir au courant"
+      "title": "Nous avons besoin de vous...",
+      "description": "Nous développons une gamme d’hygiène pour femmes nomades —conçue pour accompagner vos aventures et votre quotidien.",
+      "button": "En savoir plus"
     },
     "hikes": {
       "button": "Découvrez nos randonnées",
@@ -72,6 +71,10 @@
     "title": "Restez fraîche, partout, sans eau 🌿",
     "subtitle": "Rituels d'hygiène pour femmes nomades",
     "content": "Vous n'avez pas toujours accès à une douche en vadrouille ? Vous en avez marre d'utiliser des lingettes pour bébé qui finiront à la poubelle ? Shecanhike veut développer un rituel de nettoyage sans rinçage, pensée pour le corps et adaptée aux femmes qui bougent, pour se sentir fraîche et propre en toutes circonstances.\n\n## Pourquoi vous allez adorer\n\n- 🚿 Sans eau, sans rinçage – Utilisable partout\n- 🌸 Respectueuse du corps féminin\n- 🚫 Alternative aux lingettes jetables\n- ♻️ Une démarche plus responsable\n\n## Pour qui ?\n\n- ✨ Femmes qui voyagent léger\n- 🥾 Randonneuses et campeuses\n- 🚐 Vanlife & minimalisme\n- 💪 Sportives en déplacement\n\n## 🎉 Nous avons besoin de vous !\n\nVos retours, vos expériences et vos idées sont essentiels pour faire grandir cette gamme d'hygiène outdoor. En vous inscrivant, vous soutenez le projet et contribuez à créer une solution vraiment utile pour notre communauté.",
-    "button": "👉 Je veux être informée"
+    "button": "👉 Je veux être informée",
+    "form": {
+      "description": "",
+      "button": "Envoyer"
+    }
   }
 }

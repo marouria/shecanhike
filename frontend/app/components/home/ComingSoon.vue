@@ -1,50 +1,3 @@
-<script setup lang="ts">
-import { z } from "zod";
-import type { FormSubmitEvent } from "@nuxt/ui";
-
-const { t } = useI18n();
-
-const open = ref(false);
-const email = ref("");
-const toast = useToast();
-
-const schema = z.object({
-  email: z.email("Invalid email"),
-});
-
-type Schema = z.output<typeof schema>;
-
-const state = reactive<Partial<Schema>>({
-  email: undefined,
-});
-
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  try {
-    await $fetch("/api/hubspot/contact", {
-      method: "POST",
-      body: {
-        email: event.data.email,
-      },
-    });
-
-    toast.add({
-      title: "Thank you!",
-      description: "We well received your email.",
-      color: "success",
-    });
-
-    open.value = false;
-  } catch (error) {
-    console.error("Error saving email:", error);
-    toast.add({
-      title: "Error",
-      description: "Failed to save your email. Please try again.",
-      color: "error",
-    });
-  }
-}
-</script>
-
 <template>
   <UContainer
     as="section"
@@ -82,52 +35,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       >
         {{ $t("home.coming_soon.description") }}
       </p>
-
-      <p class="text-base text-white m-0">
-        {{ $t("home.coming_soon.question") }}
-      </p>
-      <UModal
-        v-model:open="open"
-        :title="t('home.coming_soon.button')"
-        :ui="{ footer: 'justify-end' }"
-      >
-        <UButton
-          size="xl"
-          :label="$t('home.coming_soon.button')"
-          color="neutral"
-          variant="outline"
-        />
-        <template #body>
-          <p class="mb-4">
-            We’re building a space where women who love hiking can connect,
-            share experiences, and inspire each other. Leave your email, and
-            we’ll keep you updated on the launch of our app!
-          </p>
-          <UForm
-            :schema="schema"
-            :state="state"
-            class="space-y-4"
-            @submit="onSubmit"
-          >
-            <UFormField name="email">
-              <UInput
-                v-model="state.email"
-                class="w-full"
-                placeholder=""
-                :ui="{ base: 'peer' }"
-              >
-                <label
-                  class="pointer-events-none absolute left-0 -top-2.5 text-highlighted text-xs font-medium px-1.5 transition-all peer-focus:-top-2.5 peer-focus:text-highlighted peer-focus:text-xs peer-focus:font-medium peer-placeholder-shown:text-sm peer-placeholder-shown:text-dimmed peer-placeholder-shown:top-1.5 peer-placeholder-shown:font-normal"
-                >
-                  <span class="inline-flex bg-default px-1">Email address</span>
-                </label>
-              </UInput>
-            </UFormField>
-
-            <UButton type="submit" class="text-white"> Submit </UButton>
-          </UForm>
-        </template>
-      </UModal>
+      <SharedNavigationButton
+        page="hygiene-rituals"
+        :label="$t('home.coming_soon.button')"
+      />
     </div>
   </UContainer>
 </template>

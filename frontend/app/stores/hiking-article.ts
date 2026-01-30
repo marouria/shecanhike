@@ -40,13 +40,13 @@ export const useHikingArticleStore = defineStore("hiking-article", () => {
     }
 
     try {
-      const { data } = await find<HikingArticle>("hiking-articles", {
+      const { data } = await find<HikingArticle>("articles", {
         filters: {
           slug: {
             $eq: slug,
           },
         },
-        populate: "*",
+        populate: ["cover"],
         locale: locale.value,
       });
       hikingArticle.value = data?.[0] || null;

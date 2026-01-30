@@ -45,6 +45,10 @@
     "title": "All hikes",
     "subtitle": "Asia"
   },
+  "hiking_articles": {
+    "title": "All articles",
+    "subtitle": "Blog"
+  },
   "hiking_spot": {
     "best_season": "Best season",
     "altitude_max": "Max Altitude",

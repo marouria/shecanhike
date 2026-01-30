@@ -1,10 +1,8 @@
 <script setup lang="ts">
-const { locale } = useI18n();
-
 defineProps<{
   data: {
     title: string;
-    slug: string;
+    navigation_url: string;
     excerpt: string;
     cover_url?: string;
     published_date?: string;
@@ -35,7 +33,7 @@ defineProps<{
     <time class="text-sm">{{ data.published_date }}</time>
     <h3 class="line-clamp-2 text-2xl font-bold">
       <NuxtLink
-        :to="`/${locale}/${data.slug}`"
+        :to="data.navigation_url"
         class="after:absolute after:inset-0 after:z-[1]"
       >
         {{ data.title }}

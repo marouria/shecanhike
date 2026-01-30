@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useHikingSpotStore } from "~/stores/hiking-spot";
+const { locale } = useI18n();
 
 const { t } = useI18n();
 
@@ -13,6 +14,7 @@ const hikingSpotsFormatted = computed(() => {
     excerpt: item.excerpt,
     cover_url: item.cover?.url,
     published_date: item.published_date,
+    navigation_url: `/${locale.value}/${item.slug}`,
   }));
 });
 </script>

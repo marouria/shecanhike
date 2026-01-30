@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { useHikingArticleStore } from "~/stores/hiking-article";
+const { locale } = useI18n();
 
 const { t } = useI18n();
 
 const hikingArticleStore = useHikingArticleStore();
 await hikingArticleStore.fetchHikingArticles();
+
+console.log("locale.value:", locale.value);
 
 const hikingSpotsFormatted = computed(() => {
   return hikingArticleStore.hikingArticles.map((item) => ({
@@ -13,6 +16,7 @@ const hikingSpotsFormatted = computed(() => {
     excerpt: item.excerpt,
     cover_url: item.cover?.url,
     published_date: item.published_date,
+    navigation_url: `/${locale.value}/hiking-blog/${item.slug}`,
   }));
 });
 </script>

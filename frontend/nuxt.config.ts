@@ -95,4 +95,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       ],
     },
   },
+  hooks: {
+    "pages:extend"(pages) {
+      // Trouver la route hiking-spots/[slug]
+      const hikingSpotPageIndex = pages.findIndex(
+        (page) => page.path === "/hiking-spots/:slug()",
+      );
+
+      if (hikingSpotPageIndex !== -1) {
+        const hikingSpotPage = pages[hikingSpotPageIndex];
+
+        // Créer une route au niveau racine
+        pages.push({
+          name: "slug",
+          path: "/:slug()",
+          file: hikingSpotPage?.file,
+        });
+
+        // Retirer la route longue /hiking-spots/[slug]
+        pages.splice(hikingSpotPageIndex, 1);
+      }
+    },
+  },
 });

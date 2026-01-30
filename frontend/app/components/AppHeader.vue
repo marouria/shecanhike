@@ -34,6 +34,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       variant: 'subtle',
     }"
     :ui="{ root: 'bg-default/85' }"
+    :to="`/${locale}`"
   >
     <template #title>
       <NuxtImg

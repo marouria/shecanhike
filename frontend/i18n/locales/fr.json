@@ -2,7 +2,8 @@
   "menu": {
     "hikes": "Randonnées",
     "about": "À propos",
-    "hygiene_rituals": "Rituels d'hygiène"
+    "hygiene_rituals": "Rituels d'hygiène",
+    "blog": "Blog"
   },
   "home": {
     "hero": "Parcourez les sentiers pour vous reconnecter à vous-même, en toute sécurité, entre femmes.",
@@ -43,6 +44,10 @@
   "hiking_spots": {
     "title": "Toutes les randonnées",
     "subtitle": "Asie"
+  },
+  "hiking_articles": {
+    "title": "Tous les articles",
+    "subtitle": "Blog"
   },
   "hiking_spot": {
     "best_season": "Meilleure saison",

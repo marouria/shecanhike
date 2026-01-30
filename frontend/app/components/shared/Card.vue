@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import type { HikingSpot } from "~/types/hiking-spot";
 const { locale } = useI18n();
 
 defineProps<{
-  hikingSpot: HikingSpot;
+  data: {
+    title: string;
+    slug: string;
+    excerpt: string;
+    cover_url?: string;
+    published_date?: string;
+  };
 }>();
 </script>
 
@@ -14,30 +19,30 @@ defineProps<{
         class="w-full overflow-hidden bg-primary-200 aspect-video rounded-xl"
       >
         <NuxtImg
-          v-if="hikingSpot.cover?.url"
-          :src="hikingSpot.cover.url"
+          v-if="data.cover_url"
+          :src="data.cover_url"
           provider="strapi"
           format="webp"
           loading="lazy"
           fetch-priority="low"
-          :alt="hikingSpot.title"
+          :alt="data.title"
           class="object-cover"
           width="750"
         />
       </div>
     </template>
 
-    <time class="text-sm">{{ hikingSpot.published_date }}</time>
+    <time class="text-sm">{{ data.published_date }}</time>
     <h3 class="line-clamp-2 text-2xl font-bold">
       <NuxtLink
-        :to="`/${locale}/${hikingSpot.slug}`"
+        :to="`/${locale}/${data.slug}`"
         class="after:absolute after:inset-0 after:z-[1]"
       >
-        {{ hikingSpot.title }}
+        {{ data.title }}
       </NuxtLink>
     </h3>
     <p class="line-clamp-3 leading-[1.6]">
-      {{ hikingSpot.excerpt }}
+      {{ data.excerpt }}
     </p>
 
     <template #footer>

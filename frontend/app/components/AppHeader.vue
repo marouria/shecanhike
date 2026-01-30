@@ -15,9 +15,9 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: route.path.startsWith(`/${locale.value}/hiking-spots`),
   },
   {
-    label: $t("menu.hygiene_rituals"),
-    to: `/${locale.value}/hygiene-rituals`,
-    active: route.path.startsWith(`/${locale.value}/hygiene-rituals`),
+    label: $t("menu.blog"),
+    to: `/${locale.value}/hiking-blog`,
+    active: route.path.startsWith(`/${locale.value}/hiking-blog`),
   },
   {
     label: $t("menu.about"),

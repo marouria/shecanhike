@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useHikingSpotStore } from "~/stores/hiking-spot";
+import { useHikingArticleStore } from "~/stores/hiking-article";
 
 const { t } = useI18n();
 
-const hikingSpotStore = useHikingSpotStore();
-await hikingSpotStore.fetchHikingSpots();
+const hikingArticleStore = useHikingArticleStore();
+await hikingArticleStore.fetchHikingArticles();
 
 const hikingSpotsFormatted = computed(() => {
-  return hikingSpotStore.hikingSpots.map((item) => ({
+  return hikingArticleStore.hikingArticles.map((item) => ({
     title: item.title,
     slug: item.slug,
     excerpt: item.excerpt,
@@ -21,13 +21,13 @@ const hikingSpotsFormatted = computed(() => {
   <UPage>
     <UContainer as="section" class="py-24">
       <UPageHeader
-        :title="t('hiking_spots.title')"
-        :headline="t('hiking_spots.subtitle')"
+        :title="t('hiking_articles.title')"
+        :headline="t('hiking_articles.subtitle')"
       />
 
       <UPageColumns>
-        <template v-for="(hike, index) in hikingSpotsFormatted">
-          <SharedCard :data="hike" />
+        <template v-for="article in hikingSpotsFormatted">
+          <SharedCard :data="article" />
         </template>
       </UPageColumns>
     </UContainer>

@@ -67,14 +67,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Women's Hiking Community & Trail Guides",
-      meta: [
-        {
-          name: "description",
-          content:
-            "Discover hiking trails and join a community of women adventurers. Find destinations, cultural experiences, and connect with fellow female hikers worldwide.",
-        },
-      ],
       script: [
         {
           innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

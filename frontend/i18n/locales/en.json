@@ -7,7 +7,8 @@
     "hikes": "Hikes",
     "about": "About us",
     "hygiene_rituals": "Hygiene rituals",
-    "blog": "Blog"
+    "blog": "Blog",
+    "podcast": "Podcast"
   },
   "home": {
     "hero": "Explore the outdoors safely, connect with yourself and meet other women.",
@@ -75,6 +76,11 @@
     "title": "Who is behind SheCanHike ?",
     "subtitle": "Learn more about us",
     "description": "Hi, I’m Marie. I created She Can Hike to bring women together through hiking. I wanted to meet other women who love being outdoors, to share moments of simplicity and connection.\n\nHiking helps me clear my mind and ease my anxiety. I’m someone who tends to overthink, worry about the future, and doubt myself constantly. But when I’m out on the trail, all those thoughts quiet down. I feel confident — like I’m exactly where I’m meant to be. The rhythm of my steps, the sound of the wind, the smell of the forest… it all brings me back to the present moment.\n\nI'm not great at expressing myself with words, so hiking has become its own kind of therapy for me — my stress relief, my source of inspiration, a reminder that not everything is lost, and that nature itself is powerful despite how small our existence can feel.\n\nTraveling is another big passion of mine. Over the years, I’ve lived in six different countries. I’ve learned that the best way to understand a place is often to walk through it — to take the small paths, visit the remote villages, and meet people whose traditions have stayed alive for generations. Hiking lets you do exactly that.\n\nI do enjoy cities for their social side, but I can quickly feel overwhelmed by how fast everything moves. I feel like I’m always a few steps behind. When I’m hiking, all of that fades away. There’s no rush, no comparison, no noise. It’s one of the rare moments when I truly live in the present.\n\nThat’s what She Can Hike is all about — slowing down, connecting with nature, and reminding ourselves of how strong and capable we truly are. I do hope this community will help each other grow, lift one another up, and find comfort in knowing we’re not walking this journey alone."
+  },
+  "podcast": {
+    "title": "Rencontre Au Sommet, the podcast",
+    "subtitle": "Interviews with people connected to the mountains",
+    "description": "Rencontre au sommet is a storytelling and interview podcast dedicated to people whose lives are shaped by the mountains. Through intimate and personal journeys, I give a voice to those who live, work, and connect with the mountains every day. A podcast for anyone who loves the mountains and their soothing nature."
   },
   "hygiene_rituals": {
     "title": "Feel fresh wherever the trail takes you 🌿",

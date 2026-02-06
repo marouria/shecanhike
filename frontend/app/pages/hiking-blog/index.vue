@@ -7,8 +7,6 @@ const { t } = useI18n();
 const hikingArticleStore = useHikingArticleStore();
 await hikingArticleStore.fetchHikingArticles();
 
-console.log("locale.value:", locale.value);
-
 const hikingSpotsFormatted = computed(() => {
   return hikingArticleStore.hikingArticles.map((item) => ({
     title: item.title,

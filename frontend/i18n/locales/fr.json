@@ -7,7 +7,8 @@
     "hikes": "Randonnées",
     "about": "À propos",
     "hygiene_rituals": "Rituels d'hygiène",
-    "blog": "Blog"
+    "blog": "Blog",
+    "podcast": "Podcast"
   },
   "home": {
     "hero": "Parcourez les sentiers pour vous reconnecter à vous-même, en toute sécurité, entre femmes.",
@@ -75,6 +76,11 @@
     "title": "Qui est derrière SheCanHike ?",
     "subtitle": "En apprendre plus sur nous",
     "description": "Bonjour, je suis Marie. J'ai créé She Can Hike pour rassembler les femmes à travers la randonnée. Je voulais rencontrer d'autres femmes qui aiment être en plein air, partager des moments de simplicité et de connexion.\n\nLa randonnée m'aide à vider mon esprit et à apaiser mon anxiété. Je suis quelqu'un qui a tendance à trop réfléchir, à m'inquiéter pour l'avenir et à douter de moi constamment. Mais lorsque je suis sur les sentiers, toutes ces pensées se calment. Je me sens confiante — comme si j'étais exactement là où je devais être. Le rythme de mes pas, le son du vent, l'odeur de la forêt… tout cela me ramène au moment présent.\n\nJe ne suis pas très douée pour m'exprimer avec des mots, donc la randonnée est devenue une sorte de thérapie pour moi — mon exutoire au stress, ma source d'inspiration, un rappel que tout n'est pas perdu, et que la nature elle-même est puissante malgré la petitesse de notre existence.\n\nVoyager est une autre grande passion. Au fil des ans, j'ai vécu dans six pays différents. J'ai appris que la meilleure façon de comprendre un lieu est souvent de le parcourir à pied — emprunter les petits chemins, visiter les villages reculés et rencontrer des personnes dont les traditions sont restées vivantes pendant des générations. La randonnée permet exactement cela.\n\nJ'apprécie les villes pour leur aspect social, mais je peux vite me sentir dépassée par la rapidité avec laquelle tout bouge. J'ai l'impression d'être toujours quelques pas derrière. Quand je randonne, tout cela disparaît. Il n'y a ni précipitation, ni comparaison, ni bruit. C'est l'un des rares moments où je vis vraiment le présent.\n\nC'est exactement ce que représente She Can Hike — ralentir, se connecter avec la nature et se rappeler à quel point nous sommes fortes et capables. J'espère que cette communauté aidera chacune à grandir, à se soutenir mutuellement et à trouver du réconfort en sachant que nous ne parcourons pas ce chemin seules."
+  },
+  "podcast": {
+    "title": "Rencontre Au Sommet, le podcast",
+    "subtitle": "Interviews de celles et ceux qui font la montagne",
+    "description": "Rencontre au sommet est un podcast de récits et d’interviews consacré à celles et ceux qui font la montagne. Je donne la parole aux personnes qui vivent, travaillent, habitent, utilisent la montagne au quotidien à travers des parcours de vie intimes et uniques. Un podcast pour les amoureux.ses de la montagne et de sa nature aussi intriguante qu'apaisante."
   },
   "hygiene_rituals": {
     "title": "Restez fraîche, partout, sans eau 🌿",

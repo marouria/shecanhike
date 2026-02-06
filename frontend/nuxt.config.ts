@@ -17,16 +17,6 @@ export default defineNuxtConfig({
     locales: [
       { code: "en", name: "🇺🇸", file: "en.json" },
       { code: "fr", name: "🇫🇷", file: "fr.json" },
-      // { code: "es" },
-      // { code: "pt" },
-      // { code: "it" },
-      // { code: "nl" },
-      // { code: "ko" },
-      // { code: "ja" },
-      // { code: "ru" },
-      // { code: "de" },
-      // { code: "zh-Hans" },
-      // { code: "zh-Hant" },
     ],
     defaultLocale: "en",
     strategy: "prefix",
@@ -64,6 +54,20 @@ export default defineNuxtConfig({
     headings: {
       anchorLinks: false,
     },
+  },
+  routeRules: {
+    // Cache de la page d'accueil (1 heure)
+    "/": { swr: 3600 },
+    // Cache des pages de spots de randonnée (30 minutes)
+    "/hiking-spots": { swr: 1800 },
+    "/hiking-spots/**": { swr: 1800 },
+    // Cache des pages de blog (1 heure)
+    "/hiking-blog": { swr: 3600 },
+    "/hiking-blog/**": { swr: 3600 },
+    // Cache des autres pages statiques (1 heure)
+    "/about": { swr: 3600 },
+    "/hygiene-rituals": { swr: 3600 },
+    "/podcast-rencontre-au-sommet": { swr: 3600 },
   },
   app: {
     head: {

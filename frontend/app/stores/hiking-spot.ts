@@ -10,13 +10,21 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
   const error = ref<Error | null>(null);
   const { locale } = useI18n();
 
-  const fetchHikingSpots = async () => {
+  const fetchHikingSpots = async (limit = 25, page = 1) => {
     loading.value = true;
     error.value = null;
     try {
       const { data } = await find<HikingSpot>("hiking-spots", {
         fields: ["title", "slug", "excerpt", "location", "country"],
-        populate: ["cover"],
+        populate: {
+          cover: {
+            fields: ["url", "alternativeText"],
+          },
+        } as any,
+        pagination: {
+          pageSize: limit,
+          page,
+        },
         locale: locale.value,
       });
       hikingSpots.value = data || [];

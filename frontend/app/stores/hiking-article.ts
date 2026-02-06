@@ -10,13 +10,21 @@ export const useHikingArticleStore = defineStore("hiking-article", () => {
   const error = ref<Error | null>(null);
   const { locale } = useI18n();
 
-  const fetchHikingArticles = async () => {
+  const fetchHikingArticles = async (limit = 25, page = 1) => {
     loading.value = true;
     error.value = null;
     try {
       const { data } = await find<HikingArticle>("articles", {
         fields: ["title", "slug", "excerpt"],
-        populate: ["cover"],
+        populate: {
+          cover: {
+            fields: ["url", "alternativeText"],
+          },
+        } as any,
+        pagination: {
+          pageSize: limit,
+          page,
+        },
         locale: locale.value,
       });
       hikingArticles.value = data || [];
@@ -46,8 +54,12 @@ export const useHikingArticleStore = defineStore("hiking-article", () => {
             $eq: slug,
           },
         },
-        fields: ["title", "content"],
-        populate: ["cover"],
+        fields: ["title", "content", "excerpt"],
+        populate: {
+          cover: {
+            fields: ["url", "alternativeText"],
+          },
+        } as any,
         locale: locale.value,
       });
       hikingArticle.value = data?.[0] || null;

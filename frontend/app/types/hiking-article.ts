@@ -20,7 +20,7 @@ export interface HikingArticle {
   title: string;
   slug: string;
   excerpt: string;
-  content: Text;
+  content: string;
 
   // Media
   cover?: StrapiMedia;

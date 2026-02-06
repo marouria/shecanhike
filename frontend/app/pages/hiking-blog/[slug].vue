@@ -8,9 +8,7 @@ const hikingArticleSlug = computed(() => route.params.slug as string);
 
 await hikingArticleStore.fetchHikingArticleBySlug(hikingArticleSlug.value);
 
-const active = ref("0");
-
-const hike = computed(() => hikingArticleStore.hikingArticle);
+const article = computed(() => hikingArticleStore.hikingArticle);
 const loading = computed(() => hikingArticleStore.loading);
 const error = computed(() => hikingArticleStore.error);
 </script>
@@ -37,9 +35,9 @@ const error = computed(() => hikingArticleStore.error);
           </UCard>
         </template>
 
-        <template v-else-if="hike">
+        <template v-else-if="article">
           <UPageHero
-            :title="hike.title"
+            :title="article.title"
             :ui="{
               container: 'sm:gap-y-4 sm:py-10 pb-4 sm:pb-6 lg:pt-20 lg:pb-8',
             }"
@@ -51,13 +49,13 @@ const error = computed(() => hikingArticleStore.error);
             <template #footer>
               <div class="rounded-xl overflow-hidden bg-gray-100">
                 <NuxtImg
-                  v-if="hike.cover?.url"
-                  :src="hike.cover.url"
+                  v-if="article.cover?.url"
+                  :src="article.cover.url"
                   provider="strapi"
                   format="webp"
                   loading="eager"
                   fetch-priority="high"
-                  :alt="hike.cover.alternativeText || hike.title"
+                  :alt="article.cover.alternativeText || article.title"
                   class="w-full h-full object-cover max-h-[500px]"
                 />
               </div>
@@ -68,7 +66,7 @@ const error = computed(() => hikingArticleStore.error);
           >
           </UPageSection>
           <UPageSection :ui="{ container: 'py-4 sm:py-6 lg:py-6' }">
-            <MDC :value="hike.content || ''" />
+            <MDC :value="article.content || ''" />
           </UPageSection>
         </template>
       </UPageBody>

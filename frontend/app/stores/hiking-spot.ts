@@ -46,7 +46,40 @@ export const useHikingSpotStore = defineStore("hiking-spot", () => {
             $eq: slug,
           },
         },
-        populate: "*",
+        fields: [
+          "title",
+          "location",
+          "country",
+          "best_season",
+          "altitude_max",
+          "altitude_min",
+          "content",
+        ],
+        populate: {
+          cover: {
+            fields: ["url", "alternativeText"],
+          },
+          inspirations: {
+            fields: ["title", "icon"],
+          },
+          itineraries: {
+            fields: [
+              "title",
+              "description",
+              "duration_hours",
+              "difficulty",
+              "distance_km",
+              "elevation_gain",
+              "elevation_loss",
+              "trail_type",
+              "accomodation",
+              "camping",
+              "public_transportation",
+              "trailhead_start",
+              "trailhead_end",
+            ],
+          },
+        },
         locale: locale.value,
       });
       hikingSpot.value = data?.[0] || null;

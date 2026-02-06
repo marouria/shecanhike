@@ -46,6 +46,7 @@ export const useHikingArticleStore = defineStore("hiking-article", () => {
             $eq: slug,
           },
         },
+        fields: ["title", "content"],
         populate: ["cover"],
         locale: locale.value,
       });

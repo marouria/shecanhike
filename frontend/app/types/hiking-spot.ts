@@ -26,7 +26,7 @@ export interface HikingSpot {
   excerpt: string;
   location: string;
   country: string;
-  content: Text;
+  content: string;
 
   // Media
   cover?: StrapiMedia;

@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/mdc",
     "@nuxtjs/seo",
     "@nuxtjs/i18n",
+    "@netlify/nuxt",
   ],
   i18n: {
     locales: [

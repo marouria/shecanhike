@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@netlify/nuxt": "^0.2.21",
     "@nuxt/image": "^1.11.0",
     "@nuxt/ui": "^4.0.1",
     "@nuxtjs/i18n": "^10.2.1",
